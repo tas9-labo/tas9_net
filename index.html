@@ -2,62 +2,81 @@
 <html lang="ja">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>高橋 佐 | +9</title>
 <meta name="description" content="高橋 佐（たかはし たすく / +9）— モーションデザイナー・専門学校講師・個人開発。連絡先とプロフィール。">
 <meta property="og:title" content="高橋 佐 | +9">
 <meta property="og:description" content="モーションデザイナー・専門学校講師・個人開発">
-<meta name="theme-color" content="#f6f5f2" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#16171a" media="(prefers-color-scheme: dark)">
-<link rel="icon" href="data:,">
+<meta name="theme-color" content="#e5e5ea" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='104 129 105 89'><path fill='%23444' d='M176.0366,130.8232c-12.7488,2.0014-26.8024,7.6128-36.4664,15.6061-11.2927,10.4-10.2545,23.0626,7.1971,24.2507-.1219,2.8139-.313,5.8846-.3845,8.7311.098,1.6658.0058,2.6135-1.9803,2.7731-13.8904,2.7385-28.4505,4.9224-38.4208,11.546-.5634.1345-.5432.4985-.7303.8776-.1321.2675-.2402.5534-.2346.8517.1805,9.4435,15.2324.6668,20.8776-.289,6.5802-1.0276,13.6384-3.8511,20.1526-3.8411.1212,5.55.2944,14.6605,5.758,13.9257,3.9485-1.0272,1.507-9.018,2.639-12.9664-1.9142-5.1835,17.9977.4855,14.3948-9.1232-1.9492-3.3911-9.3795-2.2475-14.1548-2.1609.1599-3.5212.3199-7.0434.4798-10.5646,8.7144-.9588,14.6201-1.949,23.0324-4.562.295,11.596.5525,26.7108-1.1542,38.2311-.0275,3.3588-2.2057,6.8232-1.0253,10.0197,5.7303,7.3846,11.2675-2.4999,11.2827-8.2081,1.4005-8.3205,1.4758-17.6229,1.4515-27.0773.6795-4.2975-2.6248-10.9072,2.1598-12.9647,28.8408-14.3216,20.0151-40.3267-14.8742-35.0555ZM191.6307,154.1128c-1.4825.6987-3.4545,2.5314-4.5665,1.4816-.1877-.1772-.4628-.2456-.7176-.2036-6.6749,1.1013-11.6011,3.1055-17.7178,3.8529-4.3312.5755-9.2273,2.0431-13.4649,1.5919-.4554-.5104-.1702-1.961-.4799-2.6411-.9835-1.3435-2.2745-2.5884-4.0782-1.9208-2.2845.19-2.7604,2.7097-3.359,4.8023-15.0419.0143,5.1118-12.4051,8.1573-14.1659,6.9716-3.2369,15.7759-6.2043,24.4709-7.2037,14.1142-.731,26.5272,2.8245,11.7557,14.4062Z'/></svg>">
 <style>
 :root{
-  --bg:#f6f5f2; --card:#ffffff; --ink:#1c1c1e; --sub:#5f6368; --line:#e4e2dd;
-  --accent:#1f5f8b; --accent-ink:#ffffff; --chip:#eef0f2;
+  --bg:#e5e5ea; --card:#f5f5f7; --ink:#1d1d1f; --sub:#6e6e73; --line:#d2d2d7;
+  --btn:#1d1d1f; --btn-ink:#f5f5f7; --tonal:#e3e3e8;
+  --shadow:0 10px 40px rgba(0,0,0,.08);
 }
 @media (prefers-color-scheme: dark){
-  :root{ --bg:#16171a; --card:#1f2024; --ink:#f2f2f2; --sub:#a0a4ab; --line:#2f3136;
-         --accent:#6fb1e0; --accent-ink:#0f1a24; --chip:#2a2c31; }
+  :root:not([data-theme="light"]){
+    --bg:#000000; --card:#1d1d1f; --ink:#f5f5f7; --sub:#a1a1a6; --line:#3a3a3c;
+    --btn:#f5f5f7; --btn-ink:#1d1d1f; --tonal:#2c2c2e;
+    --shadow:0 10px 40px rgba(0,0,0,.6);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#000000; --card:#1d1d1f; --ink:#f5f5f7; --sub:#a1a1a6; --line:#3a3a3c;
+  --btn:#f5f5f7; --btn-ink:#1d1d1f; --tonal:#2c2c2e;
+  --shadow:0 10px 40px rgba(0,0,0,.6);
 }
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--bg);color:var(--ink);
-  font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP","Yu Gothic UI",Meiryo,sans-serif;
-  font-size:16px;line-height:1.7;padding:16px}
-main{max-width:480px;margin:0 auto;background:var(--card);border:1px solid var(--line);
-  border-radius:16px;padding:28px 24px 20px}
-h1{font-size:28px;margin:0;letter-spacing:.06em;font-weight:700;line-height:1.3}
-.reading{color:var(--sub);font-size:14px;margin:4px 0 0}
-.brand{margin:14px 0 0;font-size:15px}
-.role{display:flex;flex-wrap:wrap;gap:0 .6em;margin:4px 0 0;font-weight:600;list-style:none;padding:0}
-.role li+li::before{content:"・";color:var(--sub);margin-right:.6em;font-weight:400}
-.role-en{color:var(--sub);font-size:13px;margin:0}
-.actions{display:flex;gap:10px;margin:22px 0 8px}
-.btn{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;min-height:52px;
-  border-radius:12px;text-decoration:none;font-weight:700;font-size:16px}
-.btn.primary{background:var(--accent);color:var(--accent-ink)}
-.btn.secondary{border:1.5px solid var(--accent);color:var(--accent)}
-.btn svg{width:20px;height:20px;flex:none}
-.hint{color:var(--sub);font-size:12px;margin:0;line-height:1.5}
-section{margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}
-h2{font-size:12px;letter-spacing:.14em;color:var(--sub);margin:0 0 8px;font-weight:600}
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro JP","SF Pro Text","Helvetica Neue",
+    "Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic UI",Meiryo,sans-serif;
+  font-size:16px;line-height:1.65;padding:16px;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+main{max-width:520px;margin:16px auto;background:var(--card);border-radius:28px;
+  padding:36px 28px 26px;box-shadow:var(--shadow)}
+.logo{display:block;width:auto;height:44px;color:var(--ink);margin:0 0 22px -2px}
+h1{font-size:32px;line-height:1.25;letter-spacing:.02em;font-weight:600;margin:0}
+.reading{color:var(--sub);font-size:14px;margin:6px 0 0}
+.role{display:flex;flex-wrap:wrap;gap:0 .55em;list-style:none;margin:16px 0 0;padding:0;
+  font-size:17px;font-weight:500;line-height:1.5}
+.role li+li::before{content:"/";color:var(--line);margin-right:.55em;font-weight:400}
+.role-en{color:var(--sub);font-size:13px;margin:2px 0 0;letter-spacing:.01em}
+.actions{display:flex;gap:10px;margin:26px 0 10px}
+.btn{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;height:48px;
+  border-radius:980px;text-decoration:none;font-weight:600;font-size:15px;
+  transition:opacity .15s}
+.btn:active{opacity:.7}
+.btn.primary{background:var(--btn);color:var(--btn-ink)}
+.btn.secondary{background:var(--tonal);color:var(--ink)}
+.btn svg{width:18px;height:18px;flex:none}
+.hint{color:var(--sub);font-size:12px;line-height:1.55;margin:0}
+section{margin-top:26px;padding-top:22px;border-top:1px solid var(--line)}
+h2{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--sub);
+  margin:0 0 10px;font-weight:600}
 p{margin:0}
-.chips{display:flex;flex-wrap:wrap;gap:6px 8px;margin:0;padding:0;list-style:none}
-.chips li{background:var(--chip);border-radius:8px;padding:3px 10px;font-size:14px}
-.chips + .hint{margin-top:8px}
-footer{margin-top:24px;padding-top:14px;border-top:1px solid var(--line);color:var(--sub);
+.list{list-style:none;margin:0;padding:0}
+.list li{padding:9px 0;border-bottom:1px solid var(--line);font-size:15px;line-height:1.5}
+.list li:last-child{border-bottom:0}
+.note{color:var(--sub);font-size:12px;margin-top:8px}
+.tools{font-size:15px}
+.tools span{white-space:nowrap}
+.tools span+span::before{content:"·";color:var(--sub);margin:0 .5em}
+footer{margin-top:28px;padding-top:18px;border-top:1px solid var(--line);color:var(--sub);
   font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px 12px}
-footer a{color:inherit}
+footer a{color:inherit;text-decoration:none}
 </style>
 </head>
 <body>
 <main>
   <header>
+    <svg class="logo" viewBox="104 129 105 89" role="img" aria-label="+9"><path fill="currentColor" d="M176.0366,130.8232c-12.7488,2.0014-26.8024,7.6128-36.4664,15.6061-11.2927,10.4-10.2545,23.0626,7.1971,24.2507-.1219,2.8139-.313,5.8846-.3845,8.7311.098,1.6658.0058,2.6135-1.9803,2.7731-13.8904,2.7385-28.4505,4.9224-38.4208,11.546-.5634.1345-.5432.4985-.7303.8776-.1321.2675-.2402.5534-.2346.8517.1805,9.4435,15.2324.6668,20.8776-.289,6.5802-1.0276,13.6384-3.8511,20.1526-3.8411.1212,5.55.2944,14.6605,5.758,13.9257,3.9485-1.0272,1.507-9.018,2.639-12.9664-1.9142-5.1835,17.9977.4855,14.3948-9.1232-1.9492-3.3911-9.3795-2.2475-14.1548-2.1609.1599-3.5212.3199-7.0434.4798-10.5646,8.7144-.9588,14.6201-1.949,23.0324-4.562.295,11.596.5525,26.7108-1.1542,38.2311-.0275,3.3588-2.2057,6.8232-1.0253,10.0197,5.7303,7.3846,11.2675-2.4999,11.2827-8.2081,1.4005-8.3205,1.4758-17.6229,1.4515-27.0773.6795-4.2975-2.6248-10.9072,2.1598-12.9647,28.8408-14.3216,20.0151-40.3267-14.8742-35.0555ZM191.6307,154.1128c-1.4825.6987-3.4545,2.5314-4.5665,1.4816-.1877-.1772-.4628-.2456-.7176-.2036-6.6749,1.1013-11.6011,3.1055-17.7178,3.8529-4.3312.5755-9.2273,2.0431-13.4649,1.5919-.4554-.5104-.1702-1.961-.4799-2.6411-.9835-1.3435-2.2745-2.5884-4.0782-1.9208-2.2845.19-2.7604,2.7097-3.359,4.8023-15.0419.0143,5.1118-12.4051,8.1573-14.1659,6.9716-3.2369,15.7759-6.2043,24.4709-7.2037,14.1142-.731,26.5272,2.8245,11.7557,14.4062Z"/></svg>
     <h1>高橋 佐</h1>
-    <p class="reading">たかはし たすく / Tasuku Takahashi</p>
-    <p class="brand">屋号 <strong>+9</strong>（たすく）・京都 / 長野の二拠点</p>
+    <p class="reading">たかはし たすく — Tasuku Takahashi</p>
     <ul class="role"><li>モーションデザイナー</li><li>専門学校講師</li><li>個人開発</li></ul>
-    <p class="role-en">Motion Designer / Lecturer / Indie Developer</p>
+    <p class="role-en">Motion Designer · Lecturer · Indie Developer</p>
   </header>
 
   <div class="actions">
@@ -73,40 +92,37 @@ footer a{color:inherit}
   <p class="hint">iPhone は開いた画面で「新規連絡先を作成」、Android は保存したファイルを開くと連絡帳に入ります。</p>
 
   <section>
-    <h2>ABOUT</h2>
-    <p>格闘アクションのバトルモーションを中心に、ゲーム業界23年。2019年からフリーランス、2025年からは専門学校の講師も務めています。リモート対応。</p>
+    <h2>About</h2>
+    <p>格闘アクションのバトルモーションを中心に、ゲーム業界23年。2019年からフリーランス。2025年からは OCA大阪デザイン＆テクノロジー専門学校で講師も務めています。京都・長野の二拠点、リモート対応。</p>
   </section>
 
   <section>
-    <h2>WORKS</h2>
-    <ul class="chips">
+    <h2>Works</h2>
+    <ul class="list">
       <li>スーパーストリートファイターIV</li>
       <li>ストリートファイター×鉄拳</li>
-      <li>超速変形ジャイロゼッター</li>
       <li>ウルトラストリートファイターIV</li>
       <li>ストリートファイターV</li>
       <li>MARVEL VS. CAPCOM: INFINITE</li>
       <li>ファイナルファンタジーXVI</li>
       <li>ニンジャガイデン4</li>
     </ul>
-    <p class="hint">公開できるタイトルのみ。</p>
+    <p class="note">エンドロールにクレジットのあるタイトルのみ。</p>
   </section>
 
   <section>
-    <h2>TOOLS</h2>
-    <ul class="chips">
-      <li>Maya</li><li>MotionBuilder</li><li>3ds Max</li><li>Unreal Engine</li><li>Unity</li>
-    </ul>
+    <h2>Tools</h2>
+    <p class="tools"><span>Maya</span><span>MotionBuilder</span><span>3ds Max</span><span>Unreal Engine</span><span>Unity</span></p>
   </section>
 
   <section>
-    <h2>MAKING</h2>
+    <h2>Making</h2>
     <p>業務アプリ（Windows・Android / Flutter）と、Maya・MotionBuilder のツール群を自作して運用中。このページも、いまかざしてもらったガジェットも自作です。</p>
   </section>
 
   <footer>
+    <span>+9（たすく）</span>
     <a href="mailto:takahashi@tas9.net">takahashi@tas9.net</a>
-    <span>© +9 Tasuku Takahashi</span>
   </footer>
 </main>
 </body>

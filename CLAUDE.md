@@ -42,7 +42,16 @@ GitHub Pages（公開リポ `tas9-labo/tas9_net`・main ブランチのルート
 ## 公開の足回り
 
 - DNS は GoDaddy。`www` を CNAME `tas9-labo.github.io` へ（`lume.tas9.net` と同じ）。伝播に最大1日。MX は触らない。
-- 2026-09-15 時点の切替前：`www` と apex は Google Sites 向き。apex（`tas9.net`）は www へ寄せる（GitHub の A レコード 4 本）。
+- apex（`tas9.net`）は当面 Google Sites 向きのまま（Google 側が www へ転送するので実害なし）。
+  GitHub の A レコード 4 本へ寄せるのは後日・任意。
+- Pages の配信自体は 2026-09-15 に確認済み（GitHub の IP へ直接 HTTP で index=200・tas9.vcf=200 `text/x-vcard`）。
+
+> **宿題（DNS 切替後に片付けたら消す）**
+> 1. `https://www.tas9.net/` が新ページで開くことを確認（旧 Google Sites が出るなら伝播待ち）
+> 2. HTTPS 強制をオンにする（証明書が発行されてから）：
+>    `gh api -X PUT repos/tas9-labo/tas9_net/pages -F https_enforced=true`
+> 3. iPhone で実機テスト（かざす→開く→「連絡先に保存」まで）。Android は自分の端末で。
+> 4. NFC タグに URL を書いて**ロック**（ロックは元に戻せない。上の 1 が通ってから）
 
 ## 既知の制限
 

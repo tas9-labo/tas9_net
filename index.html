@@ -235,11 +235,11 @@ p.para{margin-top:10px}
     company: '+9',
     job_title: 'モーションデザイナー / AIナレッジデザイナー / 専門学校講師',
     email: 'takahashi@tas9.net',
-    notes: 'https://www.tas9.net/ — Motion Designer / AI Knowledge Designer / Lecturer'
+    notes: 'https://tas9.net/ — Motion Designer / AI Knowledge Designer / Lecturer'
   };
   var url = 'intent:#Intent;action=android.intent.action.INSERT_OR_EDIT;type=vnd.android.cursor.item/contact';
   for (var key in fields) url += ';S.' + key + '=' + encodeURIComponent(fields[key]);
-  url += ';S.browser_fallback_url=' + encodeURIComponent('https://www.tas9.net/tas9.vcf') + ';end';
+  url += ';S.browser_fallback_url=' + encodeURIComponent('https://tas9.net/tas9.vcf') + ';end';
   a.setAttribute('href', url);
 })();
 </script>

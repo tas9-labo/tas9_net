@@ -70,5 +70,8 @@ GitHub Pages（公開リポ `tas9-labo/tas9_net`・main ブランチのルート
 
 ## 既知の制限
 
-- Android の「連絡先に保存」はダウンロード後に通知から開く形（ブラウザ仕様）。iPhone は Safari 内で即「新規連絡先を作成」。
+- 「連絡先に保存」は2経路：iPhone は `tas9.vcf`（Safari が即「新規連絡先を作成」）。Android は Chrome が .vcf を
+  ダウンロード扱いにして体験が悪い（2026-09-15 実機で確認）ため、ページ末尾の小さな script で `intent:` URL に差し替え、
+  連絡先アプリの新規作成画面を直接開く（値は vcf と同じ。**vcf を直したら script 側の fields も直す**）。
+  Chrome 以外の Android ブラウザは fallback で .vcf に戻る。1ファイル完結の原則は維持（外部読み込みなし）。
 - ズレの見張り：`PROFILE.md` の最終コミットがこのリポの最終コミットより新しければ「サイトが古い」疑い（checkup の項目）。

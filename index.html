@@ -50,15 +50,16 @@ h1{font-size:28px;line-height:1.2;letter-spacing:.02em;font-weight:600;margin:0}
 .role li+li::before{content:"/";color:var(--line);margin-right:.45em;font-weight:400}
 @media (max-width:430px){.role{display:block}.role li+li::before{content:none}.role li{line-height:1.45}}
 .role-en{color:var(--sub);font-size:13px;margin:2px 0 0;letter-spacing:.01em}
-.actions{display:flex;gap:10px;margin:26px 0 10px}
-.btn{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;height:48px;
+.actions{display:flex;align-items:center;flex-wrap:wrap;gap:10px 12px;margin:24px 0 0}
+.btn{flex:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 18px;
   border-radius:980px;text-decoration:none;font-weight:600;font-size:14px;
   transition:opacity .15s}
 .btn:active{opacity:.7}
 .btn.primary{background:var(--btn);color:var(--btn-ink)}
-.btn.secondary{background:var(--tonal);color:var(--ink)}
-.btn svg{width:22px;height:22px;flex:none}
-.hint{color:var(--sub);font-size:12px;line-height:1.7;margin:0}
+.btn.icon{width:44px;padding:0;background:var(--tonal);color:var(--ink);margin-left:auto}
+.btn svg{width:20px;height:20px;flex:none}
+.hint{flex:1 1 160px;min-width:0;color:var(--sub);font-size:11px;line-height:1.6;margin:0}
+@media (max-width:430px){.hint{flex-basis:100%;order:3}.btn.icon{order:2}}
 .hint b{font-weight:600;color:var(--ink)}
 section{margin-top:26px;padding-top:22px;border-top:1px solid var(--line)}
 h2{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--sub);
@@ -102,14 +103,15 @@ p{margin:0}
   </header>
 
   <div class="actions">
-    <a class="btn primary" id="save" href="tas9.vcf" aria-label="連絡先に保存" title="連絡先に保存">
+    <a class="btn primary" id="save" href="tas9.vcf">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
+      連絡先に追加
     </a>
-    <a class="btn secondary" href="mailto:takahashi@tas9.net" aria-label="メールする" title="メールする">
+    <p class="hint"><b>iPhone</b>：「新規作成」か「既存に追加」を選ぶ<br><b>Android</b>：「新規作成」か「既存に追加」→保存</p>
+    <a class="btn icon" href="mailto:takahashi@tas9.net" aria-label="メールする" title="メールする">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
     </a>
   </div>
-  <p class="hint"><b>iPhone</b>：「新規作成」か「既存に追加」を選ぶ<br><b>Android</b>：「新規作成」か「既存に追加」→ 保存</p>
 
   <section>
     <h2>About</h2>

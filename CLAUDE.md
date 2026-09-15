@@ -28,6 +28,7 @@ GitHub Pages（公開リポ `tas9-labo/tas9_net`・main ブランチのルート
 | ファイル | 役割 |
 |---|---|
 | `index.html` | 名刺ページ本体。1ファイル完結（CSS/JS/画像は外部読み込みなし）。**例外はフォントだけ**：Google Fonts から Inter（欧文）＋ Noto Sans JP（和文）を `display=swap` で読む＝読み込み前はシステムフォントで即表示されるので、会場の弱い電波でも空白にならない（2026-09-15 本人の希望で導入）。ロゴは path をインライン展開し、favicon も同じ path の data URI |
+| `apple-touch-icon.png` | iOS の「ホーム画面に追加」・Safari 用アイコン（180px・薄灰の地に黒ロゴ）。ロゴを変えたら `index.html` の favicon（SVG・ダーク時は明色に切替）と一緒に作り直す |
 | `logo.svg` | ロゴ「+9」の線だけを切り出した軽量版（`fill=currentColor`・1.4KB）。**原本は Fusion 作業フォルダの `G:\マイドライブ\tas9\00_fusion_work\tas9_logo.svg`**（原本はマスク付き画像を含む15KB）。原本を直したら `path` を取り直す |
 | `tas9.vcf` | 「連絡先に保存」の先（vCard 3.0・CRLF）。**電話番号は入れない**（2026-09-15 決定）。読みは X-PHONETIC-* で iPhone/Android 両対応 |
 | `CNAME` | カスタムドメイン `www.tas9.net`。消えると github.io に戻る |

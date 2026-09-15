@@ -60,12 +60,13 @@ GitHub Pages（公開リポ `tas9-labo/tas9_net`・main ブランチのルート
   GitHub の A レコード 4 本へ寄せるのは後日・任意。
 - Pages の配信自体は 2026-09-15 に確認済み（GitHub の IP へ直接 HTTP で index=200・tas9.vcf=200 `text/x-vcard`）。
 
-> **宿題（DNS 切替後に片付けたら消す）**
-> 1. `https://www.tas9.net/` が新ページで開くことを確認（旧 Google Sites が出るなら伝播待ち）
-> 2. HTTPS 強制をオンにする（証明書が発行されてから）：
->    `gh api -X PUT repos/tas9-labo/tas9_net/pages -F https_enforced=true`
-> 3. iPhone で実機テスト（かざす→開く→「連絡先に保存」まで）。Android は自分の端末で。
-> 4. NFC タグに URL を書いて**ロック**（ロックは元に戻せない。上の 1 が通ってから）
+- 2026-09-15 切替完了：GoDaddy で `www` CNAME を `tas9-labo.github.io` に変更（佑が Chrome 経由で実施・本人がサインイン）→
+  証明書が1時間経っても出なかったため Pages のカスタムドメインを外して付け直したら発行された（同じ事が起きたらこの手）→
+  HTTPS 強制オン。`https://www.tas9.net/` 200・`http://` は 301 で https へ。
+
+> **宿題（片付けたら消す）**
+> 1. iPhone で実機テスト（かざす→開く→「連絡先に保存」まで）。Android は自分の端末で。
+> 2. NFC タグに URL を書いて、上の 1 が通ってから**ロック**（ロックは元に戻せない）
 
 ## 既知の制限
 

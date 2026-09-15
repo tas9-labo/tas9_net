@@ -21,7 +21,7 @@ from reportlab.pdfgen import canvas
 from svglib.svglib import svg2rlg
 
 HERE = Path(__file__).resolve().parent
-URL = "https://tas9.net/"
+URL = "https://www.tas9.net/"
 INK = HexColor("#1d1d1f")
 SUB = HexColor("#6e6e73")
 CARD_W, CARD_H = 91 * mm, 55 * mm
@@ -49,7 +49,7 @@ def build_card() -> Drawing:
     d.add(String(8 * mm, 14.5 * mm, "Tasuku Takahashi", fontName="YuGothM", fontSize=7.5, fillColor=SUB))
 
     # URL: 左下
-    d.add(String(8 * mm, 7.5 * mm, "tas9.net", fontName="YuGothM", fontSize=7.5, fillColor=SUB))
+    d.add(String(8 * mm, 7.5 * mm, "www.tas9.net", fontName="YuGothM", fontSize=7.5, fillColor=SUB))
 
     # QR: 右側・26mm 角（静穏域 2 モジュール込み）・上下中央。
     # qrcode ライブラリの「1本のパス」SVG を使う（モジュール間に継ぎ目が出ない）。

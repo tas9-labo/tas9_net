@@ -1,6 +1,6 @@
 """ガジェット裏の QR シール（34×34mm・300dpi）と、ロック画面用の大きい QR・型押し用 SVG を作る。
 実行: py print/make_label.py（このフォルダ直下から）。必要: qrcode[pil]。
-URL は名刺ページの正式アドレス（2026-09-15 から www 無し）。www 版のタグ・印刷物も転送で有効。
+URL は名刺ページの正式アドレス（www）。
 """
 from pathlib import Path
 
@@ -9,7 +9,7 @@ from PIL import Image, ImageDraw, ImageFont
 from qrcode.image.svg import SvgPathImage
 
 HERE = Path(__file__).resolve().parent
-URL = "https://tas9.net/"
+URL = "https://www.tas9.net/"
 DPI = 300
 MM = DPI / 25.4
 
@@ -29,7 +29,7 @@ def main() -> None:
     label.paste(img, ((size - img.width) // 2, 6))
     d = ImageDraw.Draw(label)
     font = ImageFont.truetype("C:/Windows/Fonts/arial.ttf", 26)
-    text = "tas9.net"
+    text = "www.tas9.net"
     d.text(((size - d.textlength(text, font=font)) / 2, img.height + 6), text, fill="black", font=font)
     label.save(HERE / "label_34mm_300dpi.png", dpi=(DPI, DPI))
     print("label", label.size, "modules", q.modules_count)

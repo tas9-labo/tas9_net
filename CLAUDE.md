@@ -66,12 +66,14 @@ GitHub Pages（公開リポ `tas9-labo/tas9_net`・main ブランチのルート
   （185.199.108.153 / 109 / 110 / 111）へ変更（佑が実施）。`http://tas9.net/` → 301 → `https://www.tas9.net/` は同日確認済み。
   **`https://tas9.net/` の証明書は GitHub がまだ発行していない**（同日 30 分待っても未発行。www の時と同じく後から付く見込み）。
   確認は `curl -sI https://tas9.net/` が 301 を返せば完了。付かないままなら Pages のカスタムドメインを外して付け直す（www の時に効いた手）。
-- **切替の記録（2026-09-15）**：GitHub Pages は**正式ドメイン側にしか証明書を発行しない**（www が正式なら apex には付かない）。
-  正式を `tas9.net` に切り替えたところ、GitHub は即座に www→tas9.net の転送を始めたが、両ドメイン入りの新証明書は
-  「dns_changed／Requesting a new certificate」のまま 10 分以上発行されず、その間 **全訪問者（タグ経由も）に「保護されていません」**。
-  TGS 直前のため www に戻した（CNAME ファイル・Pages 設定・vCard・Android fallback・印刷原稿の URL をすべて www に）。
-  再挑戦するなら：①来客が無い時間帯 ②発行に数時間かかる前提 ③終わったら `https_enforced` を戻す ④印刷物・vCard を tas9.net に揃え直す。
-  なお GitHub の設定変更のたびにリポジトリへ「Create/Delete/Update CNAME」のコミットが自動で入るので、手元は `git pull --rebase` してから push。
+- **切替の記録（2026-09-15〜16）**：GitHub Pages は**正式ドメイン側にしか証明書を発行しない**。正式を `tas9.net` に切り替える試みを2回
+  （15日 25分・16日 約3時間）行ったが、GitHub の証明書申請は「まもなく開始」から一度も進まず、その間 www→tas9.net 転送の先に証明書が
+  無いため**全訪問者に警告**。原因の切り分け：DNS（CNAME/A/AAAA/CAA/DNSSEC/TXT）は正常、GitHub 稼働正常、CT ログに tas9.net の証明書は
+  一度も無し、GitHub の DNS 健全性チェックが 15 時間「実行中（202）」で滞留→ Pages サイトを削除・再作成でチェックは完了するも申請は始まらず。
+  結論：**www 正式に戻して固定**（www は有効な証明書で正常・`http://tas9.net` は www へ 301）。
+  **なぜ以前は警告が無かったか**：Chrome は「tas9.net」と打つと https を試し、証明書エラーなら自動で http に落として転送に乗る。
+  切替中に `https://tas9.net` を開いた履歴が残ると、以後はアドレスバーの補完で https 直打ちになり警告が出る（履歴の候補を削除すれば戻る）。
+  GitHub の設定変更のたびにリポジトリへ「Create/Delete/Update CNAME」のコミットが自動で入るので、手元は `git pull --rebase` してから push。
 - 旧 Google Sites「+9 Tasuku Takahashi」は 2026-09-15 に公開停止→ドライブのゴミ箱へ（30日で完全削除）。
   他の2サイト（+9の授業／ものづくりを成功に導く文化づくり）は無関係・そのまま。
 - Pages の配信自体は 2026-09-15 に確認済み（GitHub の IP へ直接 HTTP で index=200・tas9.vcf=200 `text/x-vcard`）。
@@ -81,8 +83,8 @@ GitHub Pages（公開リポ `tas9-labo/tas9_net`・main ブランチのルート
   HTTPS 強制オン。`https://www.tas9.net/` 200・`http://` は 301 で https へ。
 
 > **宿題（片付けたら消す）**
-> 0. **HTTPS 強制（https_enforced）が切替の副作用でオフ**のまま。GitHub が www＋tas9.net 両方入りの新証明書を発行し次第オンに戻す（`gh api -X PUT repos/tas9-labo/tas9_net/pages -F https_enforced=true`）。タグの URL は https 固定なので実害は小。新証明書が付けば apex の https も同時に解決する見込み
-> 1. **TGS 後**に正式ドメインを `tas9.net`（www 無し）へ切り替える再挑戦（下の「切替の記録」参照）。切替中は www→apex の転送先に証明書が無く**全訪問者に警告**が出るので、来客が無い時間帯に・数時間待てる日に行う
+> 0. HTTPS 強制（https_enforced）はオフのまま（GitHub が証明書を「approved」にしないと戻せない）。タグ・QR・vCard は https 固定なので実害小。`gh api -X PUT repos/tas9-labo/tas9_net/pages -F https_enforced=true` が通ったら消す
+> 1. `https://tas9.net`（www 無し・https 直打ち）の警告を消したいなら **GitHub に頼らず Cloudflare（無料）を前に置く**（本人のアカウント作成が必要・ネームサーバー移管・メール等 31 レコードの写しと照合を先に）。**正式ドメインの切替は二度としない**（下の記録）
 > 2. 名刺用紙（エーワン 51002）が届いたら普通紙で位置合わせ → 本番印刷
 
 ## 既知の制限

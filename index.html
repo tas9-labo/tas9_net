@@ -64,6 +64,9 @@ p{margin:0}
 .tools{font-size:15px}
 .tools span{white-space:nowrap}
 .tools span+span::before{content:"·";color:var(--sub);margin:0 .5em}
+.links a{display:flex;justify-content:space-between;align-items:center;gap:12px;color:inherit;text-decoration:none}
+.links a::after{content:"›";color:var(--sub);font-size:20px;line-height:1;flex:none}
+.links .sub{display:block;color:var(--sub);font-size:12px;line-height:1.5}
 footer{margin-top:28px;padding-top:18px;border-top:1px solid var(--line);color:var(--sub);
   font-size:13px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:4px 12px}
 footer a{color:inherit;text-decoration:none}
@@ -119,6 +122,14 @@ footer a{color:inherit;text-decoration:none}
   <section>
     <h2>Making</h2>
     <p>業務アプリ（Windows・Android / Flutter）と、Maya・MotionBuilder のツール群を自作して運用中。このページも、いまかざしてもらったガジェットも自作です。</p>
+  </section>
+
+  <section>
+    <h2>Links</h2>
+    <ul class="list links">
+      <li><a href="https://chatgpt.com/g/g-6a74a6e109bc81918778f9ae4f91858d-9" target="_blank" rel="noopener"><span>+9 チャットボット（GPTs）<span class="sub">「人の心に響くAI」をテーマに作った、仮想の自分。ChatGPT のログインが必要</span></span></a></li>
+      <li><a href="https://note.com/tas9rew" target="_blank" rel="noopener"><span>note<span class="sub">執筆はこちら</span></span></a></li>
+    </ul>
   </section>
 
   <footer>

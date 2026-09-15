@@ -8,8 +8,11 @@ GitHub Pages（公開リポ `tas9-labo/tas9_net`・main ブランチのルート
 
 - **中身の原本は `D:\tas9_labo\PROFILE.md`（事実台帳）**。ここは公開用に抜き出した「書き出し」。
   PROFILE を直したら「サイト更新して」で佑（Claude）がここへ反映する。逆方向（ここを直して PROFILE に戻す）はしない。
-- **載せるもの**：ロゴ（+9）・名前・読み・屋号・拠点（京都/長野）・肩書・学校名（本人了承 2026-09-15。原本は
-  student_chart の schoolInfo）・メール・代表作・主要ツール・個人開発の一言・外部リンク（GPTs「+9」と note `tas9rew`。2026-09-15 本人提案）。
+- **載せるもの**（2026-09-16 時点の構成）：キャラアイコン（名前の左）・名前・読み／英名・肩書3つ（日本語 / English）・+9 ロゴ（右上）・
+  丸いメールボタン＋「連絡先に追加」（右詰め）・About（年号ベース4行：経歴／学校名／拠点と頼める仕事の範囲／屋号）・
+  Works（補足2行＋代表作8本）・Tools（アイコンのタイル5つ）・AI & Making（造語の定義＋実践の2段落）・Lately（3Dプリンタのガジェット）・
+  Links（GPTs「+9(´_ゝ｀)」と note `tas9rew`・公式ロゴ付き）。見出しは英字で統一。フッターは置かない（重複情報になるため削除）。
+  学校名は本人了承（原本は student_chart の schoolInfo）。
 - **代表作の物差し**：PROFILE.md の「公開の物差し」に従う。①発注元に確認して許可あり（FF16・ニンジャガイデン4）
   ②会社員時代でエンドロールにクレジットあり（開発協力として文字だけ）——この①②を載せる。③クレジット無し
   （超速変形ジャイロゼッター）は載せない。いずれもロゴ・画像は使わない。
@@ -27,27 +30,35 @@ GitHub Pages（公開リポ `tas9-labo/tas9_net`・main ブランチのルート
 
 | ファイル | 役割 |
 |---|---|
-| `index.html` | 名刺ページ本体。1ファイル完結（CSS/JS/画像は外部読み込みなし）。**例外はフォントだけ**：Google Fonts から Inter（欧文）＋ Noto Sans JP（和文）を `display=swap` で読む＝読み込み前はシステムフォントで即表示されるので、会場の弱い電波でも空白にならない（2026-09-15 本人の希望で導入）。ロゴは path をインライン展開し、favicon も同じ path の data URI |
-| `apple-touch-icon.png` | iOS の「ホーム画面に追加」・Safari 用アイコン（180px・薄灰の地に黒ロゴ）。ロゴを変えたら `index.html` の favicon（SVG・ダーク時は明色に切替）と一緒に作り直す |
-| `og-image.png` | リンク共有時のプレビュー画像（1200×630・OGP）。キャラ＋名前＋肩書＋ロゴ。文言やロゴを変えたら作り直す（生成手順は git 履歴の該当コミット参照） |
+| `index.html` | 名刺ページ本体。1ファイル完結（CSS/JS/画像は外部読み込みなし）。**例外はフォントだけ**：Google Fonts から Inter（欧文）＋ Noto Sans JP（和文）を `display=swap` で読む＝読み込み前はシステムフォントで即表示されるので、会場の弱い電波でも空白にならない（2026-09-15 本人の希望で導入）。ロゴ・キャラ・各社アイコンは path をインライン展開。favicon はキャラの path の data URI。別ファイルの画像は iOS アイコンと OGP の2枚だけ（ページ表示には不要） |
+| `apple-touch-icon.png` | iOS の「ホーム画面に追加」・Safari 用アイコン（180px・薄灰の地にキャラ）。`print/make_icons.py` で生成 |
+| `og-image.png` | リンク共有時のプレビュー画像（1200×630・OGP）。キャラ＋名前＋肩書＋ロゴ。`print/make_icons.py` で apple-touch-icon.png と一緒に生成 |
 | `chara.svg` | キャラアイコン（名前の左・favicon・iOS アイコンに使用）。**原本は Fusion 作業フォルダの `tas9_logo_chara_icon.svg`**（Illustrator 出力・130KB・非表示レイヤーと画像入り）から、表示されている4本の path だけを切り出した軽量版 |
 | `logo.svg` | ロゴ「+9」の線だけを切り出した軽量版（`fill=currentColor`・1.4KB）。**原本は Fusion 作業フォルダの `G:\マイドライブ\tas9\00_fusion_work\tas9_logo.svg`**（原本はマスク付き画像を含む15KB）。原本を直したら `path` を取り直す |
 | `tas9.vcf` | 「連絡先に保存」の先（vCard 3.0・CRLF）。**電話番号は入れない**（2026-09-15 決定）。読みは X-PHONETIC-* で iPhone/Android 両対応 |
 | `CNAME` | カスタムドメイン `www.tas9.net`。消えると github.io に戻る |
 | `.nojekyll` | Jekyll 処理を止める |
-| `print/` | 印刷用（サイトからは参照しない）。ガジェット裏のシール `label_34mm_300dpi.png`（34×34mm・**100%で印刷**）、ロック画面用 `qr_1000.png`、型押し用 `qr.svg`。**名刺**は `make_card.py` が原本（ロゴ・QR・名前＆ふりがな・URL だけの 91×55mm）→ `card_91x55.pdf`（1枚）・`card_a4_10up.pdf`（A4 に10面・エーワン 51002 系の 2列×5行）・`card_preview.png`（確認用）。文言やロゴを変えたら `py print/make_card.py` で作り直す |
+| `print/` | 印刷用（サイトからは参照しない）。ガジェット裏のシール `label_34mm_300dpi.png`（34×34mm・**100%で印刷**）、ロック画面用 `qr_1000.png`、型押し用 `qr.svg`。**名刺**は `make_card.py` が原本（ロゴ・QR・名前＆ふりがな・URL だけの 91×55mm）→ `card_91x55.pdf`（1枚）・`card_a4_10up.pdf`（A4 に10面・エーワン 51002 系の 2列×5行）・`card_preview.png`（確認用）。文言やロゴを変えたら `py print/make_card.py` で作り直す。シール・qr は `make_label.py`、OGP・iOS アイコンは `make_icons.py` |
 
-## 見た目の方針（2026-09-15 本人指定）
+## 見た目の方針（2026-09-15〜16 本人指定）
 
 - 白背景にしない。**グレースケールのみ**で、Apple のサイトのような清潔感（余白・細い罫線・ピル型ボタン）。
-- 見出しは**ロゴの右に名前＋ふりがな**（本人の Photoshop 案 2026-09-15）。ロゴの高さは名前＋ふりがなのブロックに揃える（68px）。
-- 書体は Inter（欧文・Apple の SF Pro に最も近い定番）＋ Noto Sans JP（和文）。本文 17px・リスト 16px・注記 13px。
-- ライト＝薄灰の地（#e5e5ea）に灰のカード（#f5f5f7）／ダーク＝黒地にチャコール（#1d1d1f）。端末の設定に自動で追従。
+  ライト＝薄灰の地（#e5e5ea）に灰のカード（#f5f5f7）／ダーク＝黒地にチャコール（#1d1d1f）。端末の設定に自動で追従。
+  **スマホ（幅 600px 以下）はカードの枠・影・角丸を外して全幅**（左右 20px）。PC 幅はカード（最大 520px）。
+- 見出し：左に**キャラアイコン 44px**、名前 28px、その下にふりがな「/」英名。右端に **+9 ロゴ 54px**。
+  肩書は3行「モーションデザイナー / Motion Designer」の形で、日本語列＋英語列のグリッドにして「/」を縦に揃える。
+- ボタン行は右詰めで「（✉ 丸 44px）［人＋ 連絡先に追加］」。両方とも黒地に白（ダーク時は白地に黒）。操作説明の文は置かない
+  （押せば端末側が「新規作成／既存に追加」を出す）。
+- 書体は Inter（欧文）＋ Noto Sans JP（和文）。本文 15px・リスト 15px・注記 13px・見出し 12px 英字。
+- アイコン：Tools は 36px のタイル（Autodesk 3製品は公式の色付きバッジ、Unreal / Unity は黒地に白）。Links は OpenAI（黒地に白）と
+  note（note グリーンに白）の公式ロゴで、説明は 11px・1行（はみ出しは省略記号）。
+- 文章は「1文ごとに改行」を基本にする（About・Lately）。造語「AIナレッジデザイナー」は AI & Making の冒頭で定義する。
+- サイト名（タブ・共有タイトル）は「+9」。氏名は入れない。favicon はキャラ（SVG・ダーク時は明色）。
 - 確認用に `<html data-theme="dark">` を付けると強制ダークになる（ページに切替UIは置かない）。
 
 ## 更新手順
 
-1. 内容を直す（PROFILE.md の変更 → `index.html` / `tas9.vcf`）
+1. 内容を直す（PROFILE.md の変更 → `index.html` / `tas9.vcf`。肩書・名前・ロゴを変えたら `py print/make_icons.py` で OGP と iOS アイコン、`py print/make_card.py`・`py print/make_label.py` で印刷物も作り直す）
 2. ブラウザで目視確認（スマホ幅 ~400px と PC 幅、ライト/ダーク）
 3. `git commit` → `git push`（main 直接・ブランチ/PR なし）→ 1〜2分で反映
 - **タグ・QR に書いた URL（`https://www.tas9.net/`）は変えない**。タグはロック済みで書き換え不能。中身はいくらでも変えてよい。
@@ -64,9 +75,7 @@ GitHub Pages（公開リポ `tas9-labo/tas9_net`・main ブランチのルート
 
 - DNS は GoDaddy。`www` を CNAME `tas9-labo.github.io` へ（`lume.tas9.net` と同じ）。伝播に最大1日。MX は触らない。
 - apex（`tas9.net`＝www 無し）：2026-09-15 に GoDaddy の `@` A レコード 4 本を GitHub Pages の IP
-  （185.199.108.153 / 109 / 110 / 111）へ変更（佑が実施）。`http://tas9.net/` → 301 → `https://www.tas9.net/` は同日確認済み。
-  **`https://tas9.net/` の証明書は GitHub がまだ発行していない**（同日 30 分待っても未発行。www の時と同じく後から付く見込み）。
-  確認は `curl -sI https://tas9.net/` が 301 を返せば完了。付かないままなら Pages のカスタムドメインを外して付け直す（www の時に効いた手）。
+  （185.199.108.153 / 109 / 110 / 111）へ変更。`http://tas9.net/` → 301 → www は動く。**`https://tas9.net/` の証明書は付いておらず、直さない**（宿題 1 参照）。
 - **切替の記録（2026-09-15〜16）**：GitHub Pages は**正式ドメイン側にしか証明書を発行しない**。正式を `tas9.net` に切り替える試みを2回
   （15日 25分・16日 約3時間）行ったが、GitHub の証明書申請は「まもなく開始」から一度も進まず、その間 www→tas9.net 転送の先に証明書が
   無いため**全訪問者に警告**。原因の切り分け：DNS（CNAME/A/AAAA/CAA/DNSSEC/TXT）は正常、GitHub 稼働正常、CT ログに tas9.net の証明書は

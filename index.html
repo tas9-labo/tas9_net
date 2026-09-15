@@ -43,6 +43,7 @@ main{max-width:520px;margin:16px auto;background:var(--card);border-radius:28px;
 .hero{display:flex;align-items:center;justify-content:space-between;gap:20px}
 .logo{display:block;width:auto;height:54px;flex:none;color:var(--ink);margin-right:-2px}
 h1{font-size:28px;line-height:1.2;letter-spacing:.02em;font-weight:600;margin:0}
+.name-row{display:flex;align-items:center;gap:12px}
 .reading{color:var(--sub);font-size:14px;line-height:1.45;margin:6px 0 0}
 @media (max-width:430px){.reading .sep{display:none}.reading .en{display:block}}
 .role{display:flex;flex-wrap:wrap;gap:0 .45em;list-style:none;margin:18px 0 0;padding:0;
@@ -56,10 +57,11 @@ h1{font-size:28px;line-height:1.2;letter-spacing:.02em;font-weight:600;margin:0}
   transition:opacity .15s}
 .btn:active{opacity:.7}
 .btn.primary{background:var(--btn);color:var(--btn-ink)}
-.btn.icon{width:44px;padding:0;background:var(--tonal);color:var(--ink);margin-left:auto}
+.btn.icon{width:36px;height:36px;padding:0;background:var(--tonal);color:var(--ink)}
+.btn.icon svg{width:18px;height:18px}
 .btn svg{width:20px;height:20px;flex:none}
 .hint{flex:1 1 160px;min-width:0;color:var(--sub);font-size:11px;line-height:1.6;margin:0}
-@media (max-width:430px){.hint{flex-basis:100%;order:3}.btn.icon{order:2}}
+@media (max-width:430px){.hint{flex-basis:100%}}
 .hint b{font-weight:600;color:var(--ink)}
 section{margin-top:26px;padding-top:22px;border-top:1px solid var(--line)}
 h2{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--sub);
@@ -93,7 +95,12 @@ p{margin:0}
   <header>
     <div class="hero">
     <div>
+      <div class="name-row">
       <h1>高橋 佐</h1>
+      <a class="btn icon" href="mailto:takahashi@tas9.net" aria-label="メールする" title="メールする">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+      </a>
+      </div>
       <p class="reading">たかはし たすく<span class="sep"> — </span><span class="en">Tasuku Takahashi</span></p>
     </div>
     <svg class="logo" viewBox="104 129 105 89" role="img" aria-label="+9"><path fill="currentColor" d="M176.0366,130.8232c-12.7488,2.0014-26.8024,7.6128-36.4664,15.6061-11.2927,10.4-10.2545,23.0626,7.1971,24.2507-.1219,2.8139-.313,5.8846-.3845,8.7311.098,1.6658.0058,2.6135-1.9803,2.7731-13.8904,2.7385-28.4505,4.9224-38.4208,11.546-.5634.1345-.5432.4985-.7303.8776-.1321.2675-.2402.5534-.2346.8517.1805,9.4435,15.2324.6668,20.8776-.289,6.5802-1.0276,13.6384-3.8511,20.1526-3.8411.1212,5.55.2944,14.6605,5.758,13.9257,3.9485-1.0272,1.507-9.018,2.639-12.9664-1.9142-5.1835,17.9977.4855,14.3948-9.1232-1.9492-3.3911-9.3795-2.2475-14.1548-2.1609.1599-3.5212.3199-7.0434.4798-10.5646,8.7144-.9588,14.6201-1.949,23.0324-4.562.295,11.596.5525,26.7108-1.1542,38.2311-.0275,3.3588-2.2057,6.8232-1.0253,10.0197,5.7303,7.3846,11.2675-2.4999,11.2827-8.2081,1.4005-8.3205,1.4758-17.6229,1.4515-27.0773.6795-4.2975-2.6248-10.9072,2.1598-12.9647,28.8408-14.3216,20.0151-40.3267-14.8742-35.0555ZM191.6307,154.1128c-1.4825.6987-3.4545,2.5314-4.5665,1.4816-.1877-.1772-.4628-.2456-.7176-.2036-6.6749,1.1013-11.6011,3.1055-17.7178,3.8529-4.3312.5755-9.2273,2.0431-13.4649,1.5919-.4554-.5104-.1702-1.961-.4799-2.6411-.9835-1.3435-2.2745-2.5884-4.0782-1.9208-2.2845.19-2.7604,2.7097-3.359,4.8023-15.0419.0143,5.1118-12.4051,8.1573-14.1659,6.9716-3.2369,15.7759-6.2043,24.4709-7.2037,14.1142-.731,26.5272,2.8245,11.7557,14.4062Z"/></svg>
@@ -108,9 +115,6 @@ p{margin:0}
       連絡先に追加
     </a>
     <p class="hint"><b>iPhone</b>：「新規作成」か「既存に追加」を選ぶ<br><b>Android</b>：「新規作成」か「既存に追加」→保存</p>
-    <a class="btn icon" href="mailto:takahashi@tas9.net" aria-label="メールする" title="メールする">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
-    </a>
   </div>
 
   <section>

@@ -60,7 +60,9 @@ h1{font-size:28px;line-height:1.2;letter-spacing:.02em;font-weight:600;margin:0}
 .btn.icon{width:36px;height:36px;padding:0;background:var(--tonal);color:var(--ink)}
 .btn.icon svg{width:18px;height:18px}
 .btn svg{width:20px;height:20px;flex:none}
-.hint{flex:1 1 160px;min-width:0;color:var(--sub);font-size:11px;line-height:1.6;margin:0}
+.hint{flex:1 1 160px;min-width:0;color:var(--sub);font-size:11px;line-height:1.6;margin:0;
+  display:grid;grid-template-columns:max-content 1fr;column-gap:0}
+.hint span::before{content:"："}
 @media (max-width:430px){.hint{flex-basis:100%}}
 .hint b{font-weight:600;color:var(--ink)}
 section{margin-top:26px;padding-top:22px;border-top:1px solid var(--line)}
@@ -115,7 +117,7 @@ p.para{margin-top:10px}
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
       連絡先に追加
     </a>
-    <p class="hint"><b>iPhone</b>：「新規作成」か「既存に追加」を選ぶ<br><b>Android</b>：「新規作成」か「既存に追加」→保存</p>
+    <p class="hint"><b>iPhone</b><span>「新規作成」か「既存に追加」を選ぶ</span><b>Android</b><span>「新規作成」か「既存に追加」→保存</span></p>
   </div>
 
   <section>

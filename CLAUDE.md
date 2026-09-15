@@ -28,7 +28,7 @@ GitHub Pages（公開リポ `tas9-labo/tas9_net`・main ブランチのルート
 | `tas9.vcf` | 「連絡先に保存」の先（vCard 3.0・CRLF）。**電話番号は入れない**（2026-09-15 決定）。読みは X-PHONETIC-* で iPhone/Android 両対応 |
 | `CNAME` | カスタムドメイン `www.tas9.net`。消えると github.io に戻る |
 | `.nojekyll` | Jekyll 処理を止める |
-| `print/` | QR の印刷用（ガジェット裏のシール `label_34mm_300dpi.png`＝34×34mm を**100%で印刷**、ロック画面用 `qr_1000.png`、型押し用 `qr.svg`）。サイトからは参照しない |
+| `print/` | 印刷用（サイトからは参照しない）。ガジェット裏のシール `label_34mm_300dpi.png`（34×34mm・**100%で印刷**）、ロック画面用 `qr_1000.png`、型押し用 `qr.svg`。**名刺**は `make_card.py` が原本（ロゴ・QR・名前＆ふりがな・URL だけの 91×55mm）→ `card_91x55.pdf`（1枚）・`card_a4_10up.pdf`（A4 に10面・エーワン 51002 系の 2列×5行）・`card_preview.png`（確認用）。文言やロゴを変えたら `py print/make_card.py` で作り直す |
 
 ## 見た目の方針（2026-09-15 本人指定）
 

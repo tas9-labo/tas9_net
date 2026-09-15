@@ -83,8 +83,8 @@ GitHub Pages（公開リポ `tas9-labo/tas9_net`・main ブランチのルート
   HTTPS 強制オン。`https://www.tas9.net/` 200・`http://` は 301 で https へ。
 
 > **宿題（片付けたら消す）**
-> 0. HTTPS 強制（https_enforced）はオフのまま（GitHub が証明書を「approved」にしないと戻せない）。タグ・QR・vCard は https 固定なので実害小。`gh api -X PUT repos/tas9-labo/tas9_net/pages -F https_enforced=true` が通ったら消す
-> 1. `https://tas9.net`（www 無し・https 直打ち）の警告を消したいなら **GitHub に頼らず Cloudflare（無料）を前に置く**（本人のアカウント作成が必要・ネームサーバー移管・メール等 31 レコードの写しと照合を先に）。**正式ドメインの切替は二度としない**（下の記録）
+> 0. HTTPS 強制（https_enforced）はオフのまま（配る URL はすべて https なので実害なし。GitHub 側で戻せる状態になっていれば戻す程度）
+> 1. **`https://tas9.net`（www 無し・https 直打ち）の警告は「直さない」と決定**（2026-09-16 本人）。名刺・タグ・QR・vCard はすべて www で正常、手打ちの https 直打ちのみの問題で実用上ゼロ。**今後この件を持ち出さない・深追いしない**
 > 2. 名刺用紙（エーワン 51002）が届いたら普通紙で位置合わせ → 本番印刷
 
 ## 既知の制限

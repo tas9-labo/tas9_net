@@ -56,9 +56,10 @@ GitHub Pages（公開リポ `tas9-labo/tas9_net`・main ブランチのルート
 ## 公開の足回り
 
 - DNS は GoDaddy。`www` を CNAME `tas9-labo.github.io` へ（`lume.tas9.net` と同じ）。伝播に最大1日。MX は触らない。
-- apex（`tas9.net`＝www 無し）は GoDaddy の A レコードがまだ Google 向き。www の切替後、Google は www へ転送しなくなり
-  **`tas9.net` 直打ちは 404**（2026-09-15 時点）。直すなら A レコード 4 本を GitHub Pages の IP
-  （185.199.108.153 / 109 / 110 / 111）へ変える＝GitHub が www へ転送してくれる。タグ・QR・名刺は www なので当日の支障はない。
+- apex（`tas9.net`＝www 無し）：2026-09-15 に GoDaddy の `@` A レコード 4 本を GitHub Pages の IP
+  （185.199.108.153 / 109 / 110 / 111）へ変更（佑が実施）。`http://tas9.net/` → 301 → `https://www.tas9.net/` は同日確認済み。
+  **`https://tas9.net/` の証明書は GitHub がまだ発行していない**（同日 30 分待っても未発行。www の時と同じく後から付く見込み）。
+  確認は `curl -sI https://tas9.net/` が 301 を返せば完了。付かないままなら Pages のカスタムドメインを外して付け直す（www の時に効いた手）。
 - 旧 Google Sites「+9 Tasuku Takahashi」は 2026-09-15 に公開停止→ドライブのゴミ箱へ（30日で完全削除）。
   他の2サイト（+9の授業／ものづくりを成功に導く文化づくり）は無関係・そのまま。
 - Pages の配信自体は 2026-09-15 に確認済み（GitHub の IP へ直接 HTTP で index=200・tas9.vcf=200 `text/x-vcard`）。

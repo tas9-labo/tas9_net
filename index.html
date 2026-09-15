@@ -7,8 +7,8 @@
 <meta name="description" content="高橋 佐（たかはし たすく / +9）— モーションデザイナー・AIナレッジデザイナー・専門学校講師。連絡先とプロフィール。">
 <meta property="og:title" content="+9（たすく）">
 <meta property="og:description" content="モーションデザイナー・AIナレッジデザイナー・専門学校講師">
-<meta name="theme-color" content="#e5e5ea" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f5f5f7" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1d1d1f" media="(prefers-color-scheme: dark)">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;600;700&display=swap">
@@ -46,11 +46,17 @@ main{max-width:520px;margin:16px auto;background:var(--card);border-radius:28px;
 h1{font-size:28px;line-height:1.2;letter-spacing:.02em;font-weight:600;margin:0}
 .name-row{display:flex;align-items:center;gap:12px}
 .reading{color:var(--sub);font-size:14px;line-height:1.45;margin:6px 0 0}
-@media (max-width:430px){.reading .sep{display:none}.reading .en{display:block}}
+@media (max-width:430px){
+  body{padding:0;background:var(--card)}
+  main{max-width:none;margin:0;border-radius:0;box-shadow:none;padding:28px 20px 32px;min-height:100vh}
+  .reading{font-size:13px}
+  .role-en{font-size:12px}
+}
+@media (max-width:360px){.reading .sep{display:none}.reading .en{display:block}}
 .role{display:flex;flex-wrap:wrap;gap:0 .45em;list-style:none;margin:18px 0 0;padding:0;
-  font-size:15px;font-weight:500;line-height:1.5;white-space:nowrap}
-.role li+li::before{content:"/";color:var(--line);margin-right:.45em;font-weight:400}
-@media (max-width:430px){.role{display:block}.role li+li::before{content:none}.role li{line-height:1.45}}
+  font-size:15px;font-weight:500;line-height:1.5}
+.role li{white-space:nowrap}
+.role li:not(:last-child)::after{content:"/";color:var(--line);margin-left:.45em;font-weight:400}
 .role-en{color:var(--sub);font-size:13px;margin:2px 0 0;letter-spacing:.01em}
 .actions{display:flex;align-items:center;flex-wrap:wrap;gap:10px 12px;margin:24px 0 0}
 .btn{flex:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;height:44px;padding:0 18px;

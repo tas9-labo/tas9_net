@@ -21,7 +21,7 @@ GitHub Pages（公開リポ `tas9-labo/tas9_net`・main ブランチのルート
 
 | ファイル | 役割 |
 |---|---|
-| `index.html` | 名刺ページ本体。**外部読み込みゼロの1ファイル完結**（会場の弱い電波でも開くため。フォントもCDNも使わない）。ロゴは path をインライン展開し、favicon も同じ path の data URI |
+| `index.html` | 名刺ページ本体。1ファイル完結（CSS/JS/画像は外部読み込みなし）。**例外はフォントだけ**：Google Fonts から Inter（欧文）＋ Noto Sans JP（和文）を `display=swap` で読む＝読み込み前はシステムフォントで即表示されるので、会場の弱い電波でも空白にならない（2026-09-15 本人の希望で導入）。ロゴは path をインライン展開し、favicon も同じ path の data URI |
 | `logo.svg` | ロゴ「+9」の線だけを切り出した軽量版（`fill=currentColor`・1.4KB）。**原本は Fusion 作業フォルダの `G:\マイドライブ\tas9\00_fusion_work\tas9_logo.svg`**（原本はマスク付き画像を含む15KB）。原本を直したら `path` を取り直す |
 | `tas9.vcf` | 「連絡先に保存」の先（vCard 3.0・CRLF）。**電話番号は入れない**（2026-09-15 決定）。読みは X-PHONETIC-* で iPhone/Android 両対応 |
 | `CNAME` | カスタムドメイン `www.tas9.net`。消えると github.io に戻る |
@@ -31,6 +31,8 @@ GitHub Pages（公開リポ `tas9-labo/tas9_net`・main ブランチのルート
 ## 見た目の方針（2026-09-15 本人指定）
 
 - 白背景にしない。**グレースケールのみ**で、Apple のサイトのような清潔感（余白・細い罫線・ピル型ボタン）。
+- 見出しは**ロゴの右に名前＋ふりがな**（本人の Photoshop 案 2026-09-15）。ロゴの高さは名前＋ふりがなのブロックに揃える（68px）。
+- 書体は Inter（欧文・Apple の SF Pro に最も近い定番）＋ Noto Sans JP（和文）。本文 17px・リスト 16px・注記 13px。
 - ライト＝薄灰の地（#e5e5ea）に灰のカード（#f5f5f7）／ダーク＝黒地にチャコール（#1d1d1f）。端末の設定に自動で追従。
 - 確認用に `<html data-theme="dark">` を付けると強制ダークになる（ページに切替UIは置かない）。
 

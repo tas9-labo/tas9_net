@@ -81,6 +81,7 @@ GitHub Pages（公開リポ `tas9-labo/tas9_net`・main ブランチのルート
   HTTPS 強制オン。`https://www.tas9.net/` 200・`http://` は 301 で https へ。
 
 > **宿題（片付けたら消す）**
+> 0. **HTTPS 強制（https_enforced）が切替の副作用でオフ**のまま。GitHub が www＋tas9.net 両方入りの新証明書を発行し次第オンに戻す（`gh api -X PUT repos/tas9-labo/tas9_net/pages -F https_enforced=true`）。タグの URL は https 固定なので実害は小。新証明書が付けば apex の https も同時に解決する見込み
 > 1. **TGS 後**に正式ドメインを `tas9.net`（www 無し）へ切り替える再挑戦（下の「切替の記録」参照）。切替中は www→apex の転送先に証明書が無く**全訪問者に警告**が出るので、来客が無い時間帯に・数時間待てる日に行う
 > 2. 名刺用紙（エーワン 51002）が届いたら普通紙で位置合わせ → 本番印刷
 

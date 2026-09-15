@@ -93,7 +93,7 @@ footer a{color:inherit;text-decoration:none}
   </header>
 
   <div class="actions">
-    <a class="btn primary" href="tas9.vcf">
+    <a class="btn primary" id="save" href="tas9.vcf">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
       連絡先に保存
     </a>
@@ -102,7 +102,7 @@ footer a{color:inherit;text-decoration:none}
       メールする
     </a>
   </div>
-  <p class="hint">iPhone は開いた画面で「新規連絡先を作成」、Android は保存したファイルを開くと連絡帳に入ります。</p>
+  <p class="hint">iPhone は開いた画面で「新規連絡先を作成」、Android は連絡先の新規作成画面が開くので「保存」を押してください。</p>
 
   <section>
     <h2>About</h2>
@@ -147,5 +147,27 @@ footer a{color:inherit;text-decoration:none}
     <a href="mailto:takahashi@tas9.net">takahashi@tas9.net</a>
   </footer>
 </main>
-</body>
+<script>
+// Android の Chrome は .vcf を「ダウンロード」扱いにするので、Android だけは
+// 連絡先アプリの新規作成画面を直接開く intent: URL に差し替える（iPhone は .vcf のまま）。
+// 値は tas9.vcf と同じ内容。開けない環境は browser_fallback_url で .vcf に戻る。
+(function () {
+  if (!/Android/i.test(navigator.userAgent || '')) return;
+  var a = document.getElementById('save');
+  if (!a) return;
+  var fields = {
+    name: '高橋 佐',
+    phonetic_name: 'たかはし たすく',
+    company: '+9',
+    job_title: 'モーションデザイナー / AIナレッジデザイナー / 専門学校講師',
+    email: 'takahashi@tas9.net',
+    notes: 'https://www.tas9.net/ — Motion Designer / AI Knowledge Designer / Lecturer'
+  };
+  var url = 'intent:#Intent;action=android.intent.action.INSERT;type=vnd.android.cursor.dir/contact';
+  for (var key in fields) url += ';S.' + key + '=' + encodeURIComponent(fields[key]);
+  url += ';S.browser_fallback_url=' + encodeURIComponent('https://www.tas9.net/tas9.vcf') + ';end';
+  a.setAttribute('href', url);
+})();
+</script>
+</body
 </html>

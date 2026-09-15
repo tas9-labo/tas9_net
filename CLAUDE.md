@@ -66,6 +66,12 @@ GitHub Pages（公開リポ `tas9-labo/tas9_net`・main ブランチのルート
   （185.199.108.153 / 109 / 110 / 111）へ変更（佑が実施）。`http://tas9.net/` → 301 → `https://www.tas9.net/` は同日確認済み。
   **`https://tas9.net/` の証明書は GitHub がまだ発行していない**（同日 30 分待っても未発行。www の時と同じく後から付く見込み）。
   確認は `curl -sI https://tas9.net/` が 301 を返せば完了。付かないままなら Pages のカスタムドメインを外して付け直す（www の時に効いた手）。
+- **切替の記録（2026-09-15）**：GitHub Pages は**正式ドメイン側にしか証明書を発行しない**（www が正式なら apex には付かない）。
+  正式を `tas9.net` に切り替えたところ、GitHub は即座に www→tas9.net の転送を始めたが、両ドメイン入りの新証明書は
+  「dns_changed／Requesting a new certificate」のまま 10 分以上発行されず、その間 **全訪問者（タグ経由も）に「保護されていません」**。
+  TGS 直前のため www に戻した（CNAME ファイル・Pages 設定・vCard・Android fallback・印刷原稿の URL をすべて www に）。
+  再挑戦するなら：①来客が無い時間帯 ②発行に数時間かかる前提 ③終わったら `https_enforced` を戻す ④印刷物・vCard を tas9.net に揃え直す。
+  なお GitHub の設定変更のたびにリポジトリへ「Create/Delete/Update CNAME」のコミットが自動で入るので、手元は `git pull --rebase` してから push。
 - 旧 Google Sites「+9 Tasuku Takahashi」は 2026-09-15 に公開停止→ドライブのゴミ箱へ（30日で完全削除）。
   他の2サイト（+9の授業／ものづくりを成功に導く文化づくり）は無関係・そのまま。
 - Pages の配信自体は 2026-09-15 に確認済み（GitHub の IP へ直接 HTTP で index=200・tas9.vcf=200 `text/x-vcard`）。
@@ -75,7 +81,7 @@ GitHub Pages（公開リポ `tas9-labo/tas9_net`・main ブランチのルート
   HTTPS 強制オン。`https://www.tas9.net/` 200・`http://` は 301 で https へ。
 
 > **宿題（片付けたら消す）**
-> 1. `https://tas9.net/`（www 無し）の証明書が GitHub で発行されたか確認（`curl -sI https://tas9.net/` が 301 なら完了）
+> 1. **TGS 後**に正式ドメインを `tas9.net`（www 無し）へ切り替える再挑戦（下の「切替の記録」参照）。切替中は www→apex の転送先に証明書が無く**全訪問者に警告**が出るので、来客が無い時間帯に・数時間待てる日に行う
 > 2. 名刺用紙（エーワン 51002）が届いたら普通紙で位置合わせ → 本番印刷
 
 ## 既知の制限

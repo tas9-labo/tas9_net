@@ -57,7 +57,7 @@ h1{font-size:28px;line-height:1.2;letter-spacing:.02em;font-weight:600;margin:0}
 .btn:active{opacity:.7}
 .btn.primary{background:var(--btn);color:var(--btn-ink)}
 .btn.secondary{background:var(--tonal);color:var(--ink)}
-.btn svg{width:18px;height:18px;flex:none}
+.btn svg{width:22px;height:22px;flex:none}
 .hint{color:var(--sub);font-size:12px;line-height:1.7;margin:0}
 .hint b{font-weight:600;color:var(--ink)}
 section{margin-top:26px;padding-top:22px;border-top:1px solid var(--line)}
@@ -102,13 +102,11 @@ p{margin:0}
   </header>
 
   <div class="actions">
-    <a class="btn primary" id="save" href="tas9.vcf">
+    <a class="btn primary" id="save" href="tas9.vcf" aria-label="連絡先に保存" title="連絡先に保存">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M19 8v6M22 11h-6"/></svg>
-      連絡先に保存
     </a>
-    <a class="btn secondary" href="mailto:takahashi@tas9.net">
+    <a class="btn secondary" href="mailto:takahashi@tas9.net" aria-label="メールする" title="メールする">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
-      メールする
     </a>
   </div>
   <p class="hint"><b>iPhone</b>：「新規作成」か「既存に追加」を選ぶ<br><b>Android</b>：「新規作成」か「既存に追加」→ 保存</p>

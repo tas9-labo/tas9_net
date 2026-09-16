@@ -11,7 +11,7 @@ GitHub Pages（公開リポ `tas9-labo/tas9_net`・main ブランチのルート
 - **載せるもの**（2026-09-16 時点の構成）：キャラアイコン（名前の左）・名前・読み／英名・肩書3つ（日本語 / English）・+9 ロゴ（右上）・
   丸いメールボタン＋「連絡先に追加」（右詰め）・About（年号ベース4行：経歴／学校名／拠点と頼める仕事の範囲／屋号）・
   Works（補足2行＋代表作8本）・Tools（アイコンのタイル5つ）・AI & Making（造語の定義＋実践の2段落）・Lately（3Dプリンタのガジェット）・
-  Links（GPTs「+9(´_ゝ｀)」と note `tas9rew`・公式ロゴ付き）。 AI & Making の冒頭に Gemini・ChatGPT・Claude のアイコン3つ（アイコンのみ・36px・simple-icons・2026-09-16）。 Lately の冒頭には Bambu Lab（Bambu Studio）のアイコン。見出しは英字で統一。フッターは置かない（重複情報になるため削除）。
+  Side Project（スノーボードブランド Leverage：ロゴ・2行の説明・担当のチップ・公式サイトと Instagram へのリンク。2026-09-16 追加。ブランド名は文中に書かずロゴで示す＝本人指定）・  Links（GPTs「+9(´_ゝ｀)」と note `tas9rew`・公式ロゴ付き）。 AI & Making の冒頭に Gemini・ChatGPT・Claude のアイコン3つ（アイコンのみ・36px・simple-icons・2026-09-16）。 Lately の冒頭には Bambu Lab（Bambu Studio）のアイコン。見出しは英字で統一。フッターは置かない（重複情報になるため削除）。
   学校名は本人了承（原本は student_chart の schoolInfo）。
 - **代表作の物差し**（2026-09-16 改定）：ページに載せるのは**フリーランス以降で発注元に直接確認して許可を得たタイトル**（FF16・ニンジャガイデン4）だけ。会社員時代のタイトルは、エンドロールにクレジットがあっても**前職が公表していない限り載せない**（前職と発注元の契約に触れる可能性があるため。口頭で話す範囲に留める）。代わりに「案件数35本・主なジャンル・職制の経験」を注記で示す。いずれもロゴ・画像は使わない。
 - ロゴ・ツールのアイコンはすべてインライン SVG（外部読み込みなし）。**Maya / 3ds Max / MotionBuilder は Autodesk 公式サイトの
@@ -32,6 +32,7 @@ GitHub Pages（公開リポ `tas9-labo/tas9_net`・main ブランチのルート
 | `apple-touch-icon.png` | iOS の「ホーム画面に追加」・Safari 用アイコン（180px・薄灰の地にキャラ）。`print/make_icons.py` で生成 |
 | `og-image.png` | リンク共有時のプレビュー画像（1200×630・OGP）。キャラ＋名前＋肩書＋ロゴ。`print/make_icons.py` で apple-touch-icon.png と一緒に生成 |
 | `chara.svg` | キャラアイコン（名前の左・favicon・iOS アイコンに使用）。**原本は Fusion 作業フォルダの `tas9_logo_chara_icon.svg`**（Illustrator 出力・130KB・非表示レイヤーと画像入り）から、表示されている4本の path だけを切り出した軽量版 |
+| `leverage.svg` | Side Project の Leverage（スノーボードブランド・本人がロゴを制作、商標登録あり）のロゴ。**原本は `G:\マイドライブ\tas9rew\leverage_work\logo_png\leverage_logo_02.svg`**（Illustrator 出力）。形は原本のまま・色だけ currentColor（ダーク時は白）。ページ内では inline 展開し、公式サイトへのリンクにしている |
 | `logo.svg` | ロゴ「+9」の線だけを切り出した軽量版（`fill=currentColor`・1.4KB）。**原本は Fusion 作業フォルダの `G:\マイドライブ\tas9\00_fusion_work\tas9_logo.svg`**（原本はマスク付き画像を含む15KB）。原本を直したら `path` を取り直す |
 | `tas9.vcf` | 「連絡先に保存」の先（vCard 3.0・CRLF）。**電話番号は入れない**（2026-09-15 決定）。読みは X-PHONETIC-* で iPhone/Android 両対応 |
 | `CNAME` | カスタムドメイン `www.tas9.net`。消えると github.io に戻る |

@@ -11,7 +11,7 @@ GitHub Pages（公開リポ `tas9-labo/tas9_net`・main ブランチのルート
 - **載せるもの**（2026-09-16 時点の構成）：キャラアイコン（名前の左）・名前・読み／英名・肩書3つ（日本語 / English）・+9 ロゴ（右上）・
   丸いメールボタン＋「連絡先に追加」（右詰め）・About（年号ベース4行：経歴／学校名／拠点と頼める仕事の範囲／屋号）・
   Works（補足2行＋代表作8本）・Tools（アイコンのタイル5つ）・AI & Making（造語の定義＋実践の2段落）・Lately（3Dプリンタのガジェット）・
-  Links（GPTs「+9(´_ゝ｀)」と note `tas9rew`・公式ロゴ付き）。 AI & Making の冒頭に Gemini・ChatGPT・Claude のアイコン3つ（アイコンのみ・36px・simple-icons・2026-09-16）。見出しは英字で統一。フッターは置かない（重複情報になるため削除）。
+  Links（GPTs「+9(´_ゝ｀)」と note `tas9rew`・公式ロゴ付き）。 AI & Making の冒頭に Gemini・ChatGPT・Claude のアイコン3つ（アイコンのみ・36px・simple-icons・2026-09-16）。 Lately の冒頭には Bambu Lab（Bambu Studio）のアイコン。見出しは英字で統一。フッターは置かない（重複情報になるため削除）。
   学校名は本人了承（原本は student_chart の schoolInfo）。
 - **代表作の物差し**：PROFILE.md の「公開の物差し」に従う。①発注元に確認して許可あり（FF16・ニンジャガイデン4）
   ②会社員時代でエンドロールにクレジットあり（開発協力として文字だけ）——この①②を載せる。③クレジット無し

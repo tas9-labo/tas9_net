@@ -48,7 +48,7 @@ GitHub Pages（公開リポ `tas9-labo/tas9_net`・main ブランチのルート
 - ボタン行は右詰めで「（✉ 丸 44px）［人＋ 連絡先に追加］」。両方とも黒地に白（ダーク時は白地に黒）。操作説明の文は置かない
   （押せば端末側が「新規作成／既存に追加」を出す）。
 - 書体は Inter（欧文）＋ Noto Sans JP（和文）。本文 15px・リスト 15px・注記 13px・見出し 12px 英字。
-- アイコン：Tools は 36px のタイル（Autodesk 3製品は公式の色付きバッジ、Unreal / Unity は黒地に白）。Links は OpenAI（黒地に白）と
+- アイコン：Tools は 36px のタイル（Autodesk 3製品は公式の色付きバッジ、Unreal / Unity は黒地に白、Adobe 4製品（Ps・Ai・Pr・Ae）は公式アプリアイコンの配色・2026-09-16 追加）。Links は OpenAI（黒地に白）と
   note（note グリーンに白）の公式ロゴで、説明は 11px・1行（はみ出しは省略記号）。
 - 文章は「1文ごとに改行」を基本にする（About・Lately）。造語「AIナレッジデザイナー」は AI & Making の冒頭で定義する。
 - サイト名（タブ・共有タイトル）は「+9」。氏名は入れない。favicon はキャラ（SVG・ダーク時は明色）。

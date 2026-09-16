@@ -15,7 +15,7 @@ GitHub Pages（公開リポ `tas9-labo/tas9_net`・main ブランチのルート
   ④Works＝「フリーランスとして開発協力した主なタイトル」＋チップ2本（FF16・ニンジャガイデン4）＋会社員時代の要約注記3行（35本・ジャンル・職制）
   ⑤Tools＝アイコンのタイル9つ（Maya・MotionBuilder・3ds Max・Unreal Engine・Unity／Photoshop・Illustrator・Premiere Pro・After Effects）
   ⑥Side Project＝Leverage のロゴ（リンクなし）＋右下に Web・Instagram の無彩色アイコン＋1文（立ち上げに協力し、デザインを担当）＋チップ4つ（ブランドロゴ・スノーボード・ボードケース・アパレル）
-  ⑦AI & Making＝Gemini・ChatGPT・Claude のアイコン3つ＋造語の定義＋実践の2段落
+  ⑦AI & Making＝Gemini・ChatGPT・Claude のアイコン3つ＋造語の定義＋実践の2段落＋**主な開発言語**（チップ Python／Dart / Flutter＋用途の注記1行。Python＝Maya・MotionBuilder ツール、Dart / Flutter＝Windows・Android アプリ）
   ⑧Lately＝Fusion・Bambu Studio のアイコン＋3文（3Dプリンタのガジェット・NFC ガジェットもその一つ）
   ⑨Links＝GPTs「+9(´_ゝ｀)」と note `tas9rew`（公式ロゴ・1行説明）。見出しはすべて英字。フッターは置かない。
   学校名は本人了承（原本は student_chart の schoolInfo）。ブランド名 Leverage は文中に書かずロゴで示す（商標登録のため表記はロゴのまま＝本人指定）。

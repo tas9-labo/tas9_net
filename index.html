@@ -93,6 +93,12 @@ p.para{margin-top:10px}
 .ico.brand-ig{background:var(--tonal);color:var(--ink)}
 .note{color:var(--sub);font-size:13px}
 .works-note{margin-top:12px;line-height:1.7}
+.timeline{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:max-content auto;column-gap:1em;row-gap:6px;font-size:15px;line-height:1.5}
+.timeline li{display:contents}
+.timeline .yr{color:var(--sub);font-variant-numeric:tabular-nums;white-space:nowrap}
+.about-note{margin-top:12px}
+.desc{margin-top:16px}
+.nw{white-space:nowrap}
 .lead{margin-bottom:8px}
 .tools{display:flex;flex-wrap:wrap;gap:12px 6px;margin:0;padding:0;list-style:none}
 .tools li{display:flex;flex-direction:column;align-items:center;gap:5px;width:72px;font-size:11px;color:var(--sub);text-align:center;line-height:1.2}
@@ -154,7 +160,14 @@ p.para{margin-top:10px}
 
   <section>
     <h2>About</h2>
-    <p>2002年からゲーム業界で3DCG制作に携わり、2019年にフリーランスとして独立。<br>2025年からは OCA大阪デザイン＆テクノロジー専門学校で講師も務めています。<br>拠点は京都と長野。<br>モーション制作（手付け・キャプチャ）や品質管理・進行を、業務委託・リモートで承ります。<br>屋号は +9（たすく）。</p>
+    <ul class="timeline">
+      <li><span class="yr">2002年</span><span>ゲーム業界へ。3DCGデザイナーとして下積みから</span></li>
+      <li><span class="yr">2009年</span><span>モデラーからモーションデザイナーへ</span></li>
+      <li><span class="yr">2019年</span><span>フリーランスとして独立<span class="nw">（屋号 +9）</span></span></li>
+      <li><span class="yr">2025年</span><span>OCA大阪デザイン＆テクノロジー専門学校 講師</span></li>
+    </ul>
+    <p class="note about-note">モーション制作（手付け・キャプチャ）や品質管理・進行を、業務委託・リモートで承ります。</p>
+    <p class="desc">下積みから始め、モデラー、モーションデザイナー、品質管理・進行のリードを経て独立。<br>独立後は大作アクションのバトルモーションを手掛けながら、制作の道具（ツールやアプリ）も自分で作るようになりました。<br>いまは京都と長野を行き来し、制作・教育・AI活用をひとつの暮らしの中で回しています。</p>
   </section>
 
   <section>

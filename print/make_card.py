@@ -1,8 +1,8 @@
-"""名刺（91×55mm）の印刷原稿を作る。ロゴ・QR・名前＆ふりがな・URL だけの構成。
+"""名刺（91×55mm）の印刷原稿を作る。+9 ロゴ・名前（和／英）・QR だけの構成（2026-09-17 本人指定）。
 
 出力（すべてベクター。QR はここで生成）:
   print/card_91x55.pdf     … 1枚（名刺サイズの用紙・カードプリンタ向け）
-  print/card_a4_10up.pdf   … A4 に 10 面付け（エーワン 51002 等の 2列×5行・91×55mm 用紙向け）
+  print/card_a4_10up.pdf   … A4 に 10 面付け（エーワン 51002＝マイクロミシン目・2列×5行・上 11mm／左 14mm・隙間なし）
   print/card_preview.png   … 目視確認用（300dpi）
 実行: py print/make_card.py（このフォルダ直下から）。フォントは Windows 標準の游ゴシック。
 必要: reportlab・svglib・pymupdf（プレビュー用）。
@@ -40,16 +40,12 @@ def build_card() -> Drawing:
     logo.scale(scale, scale)
     logo.width, logo.height = logo.width * scale, logo.height * scale
     g = Group(logo)
-    g.translate(7.5 * mm, CARD_H - 7 * mm - 11 * mm)
+    g.translate(7.5 * mm, CARD_H - 8 * mm - 11 * mm)
     d.add(g)
 
-    # 名前・ふりがな・英名
-    d.add(String(8 * mm, 24 * mm, "高橋 佐", fontName="YuGothB", fontSize=19, fillColor=INK))
-    d.add(String(8 * mm, 18.5 * mm, "たかはし たすく", fontName="YuGothM", fontSize=7.5, fillColor=SUB))
-    d.add(String(8 * mm, 14.5 * mm, "Tasuku Takahashi", fontName="YuGothM", fontSize=7.5, fillColor=SUB))
-
-    # URL: 左下
-    d.add(String(8 * mm, 7.5 * mm, "www.tas9.net", fontName="YuGothM", fontSize=7.5, fillColor=SUB))
+    # 名前（和）＋英名: 左下に寄せる（ロゴ＝左上・名前＝左下・QR＝右中央の三点で釣り合わせる）
+    d.add(String(8 * mm, 15 * mm, "高橋 佐", fontName="YuGothB", fontSize=19, fillColor=INK))
+    d.add(String(8 * mm, 9.5 * mm, "Tasuku Takahashi", fontName="YuGothM", fontSize=8, fillColor=SUB))
 
     # QR: 右側・26mm 角（静穏域 2 モジュール込み）・上下中央。
     # qrcode ライブラリの「1本のパス」SVG を使う（モジュール間に継ぎ目が出ない）。
@@ -64,7 +60,7 @@ def build_card() -> Drawing:
     s = size / qr.width
     qr.scale(s, s)
     wrap = Group(qr)
-    wrap.translate(CARD_W - 7 * mm - size, (CARD_H - size) / 2)
+    wrap.translate(CARD_W - 8 * mm - size, (CARD_H - size) / 2)
     d.add(wrap)
     return d
 
@@ -82,15 +78,7 @@ def main() -> None:
             x = left + col * CARD_W
             y = a4_h - top - (row + 1) * CARD_H
             renderPDF.draw(card, c, x, y)
-    c.setStrokeColor(HexColor("#bbbbbb"))
-    c.setLineWidth(0.2)
-    # 切り取り用の薄いガイド線（用紙にミシン目があるなら無視してよい）
-    for col in range(3):
-        x = left + col * CARD_W
-        c.line(x, a4_h - top, x, a4_h - top - 5 * CARD_H)
-    for row in range(6):
-        y = a4_h - top - row * CARD_H
-        c.line(left, y, left + 2 * CARD_W, y)
+    # ガイド線は引かない（51002 はミシン目入り。線を刷るとわずかなズレが端に灰色の筋として残る）
     c.showPage()
     c.save()
     # 目視確認用 PNG（PDF をそのまま 300dpi でラスタライズ。印刷に使うのは PDF）

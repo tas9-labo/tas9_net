@@ -43,7 +43,7 @@ GitHub Pages（公開リポ `tas9-labo/tas9_net`・main ブランチのルート
 | `tas9.vcf` | 「連絡先に保存」の先（vCard 3.0・CRLF）。**電話番号は入れない**（2026-09-15 決定）。読みは X-PHONETIC-* で iPhone/Android 両対応 |
 | `CNAME` | カスタムドメイン `www.tas9.net`。消えると github.io に戻る |
 | `.nojekyll` | Jekyll 処理を止める |
-| `print/` | 印刷用（サイトからは参照しない）。ガジェット裏のシール `label_34mm_300dpi.png`（34×34mm・**100%で印刷**）、ロック画面用 `qr_1000.png`、型押し用 `qr.svg`。**名刺**は `make_card.py` が原本（ロゴ・QR・名前＆ふりがな・URL だけの 91×55mm）→ `card_91x55.pdf`（1枚）・`card_a4_10up.pdf`（A4 に10面・エーワン 51002 系の 2列×5行）・`card_preview.png`（確認用）。文言やロゴを変えたら `py print/make_card.py` で作り直す。シール・qr は `make_label.py`、OGP・iOS アイコンは `make_icons.py` |
+| `print/` | 印刷用（サイトからは参照しない）。ガジェット裏のシール `label_34mm_300dpi.png`（34×34mm・**100%で印刷**）、ロック画面用 `qr_1000.png`、型押し用 `qr.svg`。**名刺**は `make_card.py` が原本（**+9 ロゴ（左上）・名前＆英名（左下）・QR（右中央）だけ**の 91×55mm・ふりがな／URL は載せない＝2026-09-17 本人指定）→ `card_91x55.pdf`（1枚）・`card_a4_10up.pdf`（A4 に10面・**エーワン 51002**（購入済み・マイクロミシン目）の 2列×5行・上 11mm／左 14mm・ガイド線なし）・`card_preview.png`（確認用）。印刷は **100%（実際のサイズ）・拡大縮小なし**で。文言やロゴを変えたら `py print/make_card.py` で作り直す。シール・qr は `make_label.py`、OGP・iOS アイコンは `make_icons.py` |
 
 ## 見た目の方針（2026-09-15〜16 本人指定）
 
@@ -101,7 +101,7 @@ GitHub Pages（公開リポ `tas9-labo/tas9_net`・main ブランチのルート
 > **宿題（片付けたら消す）**
 > 0. HTTPS 強制（https_enforced）はオフのまま（配る URL はすべて https なので実害なし。GitHub 側で戻せる状態になっていれば戻す程度）
 > 1. **`https://tas9.net`（www 無し・https 直打ち）の警告は「直さない」と決定**（2026-09-16 本人）。名刺・タグ・QR・vCard はすべて www で正常、手打ちの https 直打ちのみの問題で実用上ゼロ。**今後この件を持ち出さない・深追いしない**
-> 2. 名刺用紙（エーワン 51002）が届いたら普通紙で位置合わせ → 本番印刷
+> 2. 名刺の原稿は用紙（エーワン 51002）に合わせて作成済み（2026-09-17）。普通紙に1枚試し刷りして用紙と重ねて位置を確かめる → 本番印刷（本人）
 
 ## 既知の制限
 

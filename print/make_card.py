@@ -34,20 +34,22 @@ def build_card() -> Drawing:
     d = Drawing(CARD_W, CARD_H)
     d.add(Rect(0, 0, CARD_W, CARD_H, fillColor=white, strokeColor=None))
 
-    # ロゴ（+9）: 左上。高さ 11mm
+    # レイアウトは本人のラフ（2026-09-17）を実測して数値化：ロゴ・名前・QR を 1 行に横並び、全部を上下中央に。
+    # ロゴ（+9）: 左 5.8mm・高さ 13mm・上下中央
     logo = svg2rlg(str(HERE.parent / "logo.svg"))
-    scale = (11 * mm) / logo.height
+    logo_h = 13 * mm
+    scale = logo_h / logo.height
     logo.scale(scale, scale)
     logo.width, logo.height = logo.width * scale, logo.height * scale
     g = Group(logo)
-    g.translate(7.5 * mm, CARD_H - 8 * mm - 11 * mm)
+    g.translate(5.8 * mm, (CARD_H - logo_h) / 2)
     d.add(g)
 
-    # 名前（和）＋英名: 左下に寄せる（ロゴ＝左上・名前＝左下・QR＝右中央の三点で釣り合わせる）
-    d.add(String(8 * mm, 15 * mm, "高橋 佐", fontName="YuGothB", fontSize=19, fillColor=INK))
-    d.add(String(8 * mm, 9.5 * mm, "Tasuku Takahashi", fontName="YuGothM", fontSize=8, fillColor=SUB))
+    # 名前（和 13pt）＋英名（8pt）: ロゴの右（左 26mm）。ベースラインは下から 25.8mm / 22.3mm
+    d.add(String(26 * mm, 25.8 * mm, "高橋 佐", fontName="YuGothB", fontSize=13, fillColor=INK))
+    d.add(String(26 * mm, 22.3 * mm, "Tasuku Takahashi", fontName="YuGothM", fontSize=8, fillColor=SUB))
 
-    # QR: 右側・26mm 角（静穏域 2 モジュール込み）・上下中央。
+    # QR: 右側・見える部分 15.5mm 角（右端は 7.5mm 空け）・静穏域 2 モジュールはその外側・上下中央。
     # qrcode ライブラリの「1本のパス」SVG を使う（モジュール間に継ぎ目が出ない）。
     q = qrcode.QRCode(error_correction=qrcode.constants.ERROR_CORRECT_M, border=2, box_size=10)
     q.add_data(URL)
@@ -56,11 +58,14 @@ def build_card() -> Drawing:
     q.make_image(image_factory=qrcode.image.svg.SvgPathImage).save(str(svg_path))
     qr = svg2rlg(str(svg_path))
     svg_path.unlink()
-    size = 26 * mm
+    n = q.modules_count
+    visible = 15.5 * mm
+    size = visible * (n + 4) / n  # 静穏域（両側 2 モジュール）込みの全体
     s = size / qr.width
     qr.scale(s, s)
     wrap = Group(qr)
-    wrap.translate(CARD_W - 8 * mm - size, (CARD_H - size) / 2)
+    quiet = visible * 2 / n
+    wrap.translate(CARD_W - 7.5 * mm - visible - quiet, (CARD_H - size) / 2)
     d.add(wrap)
     return d
 

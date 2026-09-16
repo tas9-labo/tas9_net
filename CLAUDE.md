@@ -8,11 +8,17 @@ GitHub Pages（公開リポ `tas9-labo/tas9_net`・main ブランチのルート
 
 - **中身の原本は `D:\tas9_labo\PROFILE.md`（事実台帳）**。ここは公開用に抜き出した「書き出し」。
   PROFILE を直したら「サイト更新して」で佑（Claude）がここへ反映する。逆方向（ここを直して PROFILE に戻す）はしない。
-- **載せるもの**（2026-09-16 時点の構成）：キャラアイコン（名前の左）・名前・読み／英名・肩書3つ（日本語 / English）・+9 ロゴ（右上）・
-  丸いメールボタン＋「連絡先に追加」（右詰め）・About（年号ベース4行：経歴／学校名／拠点と頼める仕事の範囲／屋号）・
-  Works（補足2行＋代表作8本）・Tools（アイコンのタイル5つ）・AI & Making（造語の定義＋実践の2段落）・Lately（3Dプリンタのガジェット）・
-  Side Project（スノーボードブランド Leverage：ロゴ・2行の説明・担当のチップ・公式サイトと Instagram へのリンク。2026-09-16 追加。ブランド名は文中に書かずロゴで示す＝本人指定）・  Links（GPTs「+9(´_ゝ｀)」と note `tas9rew`・公式ロゴ付き）。 AI & Making の冒頭に Gemini・ChatGPT・Claude のアイコン3つ（アイコンのみ・36px・simple-icons・2026-09-16）。 Lately の冒頭には Autodesk Fusion（公式バッジ PNG 75px を data URI で埋め込み・autodesk.com の製品ページより）と Bambu Lab（Bambu Studio）のアイコン。見出しは英字で統一。フッターは置かない（重複情報になるため削除）。
-  学校名は本人了承（原本は student_chart の schoolInfo）。
+- **載せるもの**（2026-09-16 夜時点の構成・上から順）：
+  ①見出し＝キャラアイコン（名前の左・44px）・名前・読み／英名・肩書3つ（日本語 / English を列で揃える）・+9 ロゴ（右上・54px）
+  ②ボタン行＝右詰めで「（✉ 丸）［連絡先に追加］」
+  ③About＝年号ベース5行（経歴／学校名／拠点／頼める仕事の範囲（業務委託・リモート）／屋号 +9）
+  ④Works＝「フリーランスとして開発協力した主なタイトル」＋チップ2本（FF16・ニンジャガイデン4）＋会社員時代の要約注記3行（35本・ジャンル・職制）
+  ⑤Tools＝アイコンのタイル9つ（Maya・MotionBuilder・3ds Max・Unreal Engine・Unity／Photoshop・Illustrator・Premiere Pro・After Effects）
+  ⑥Side Project＝Leverage のロゴ（リンクなし）＋右下に Web・Instagram の無彩色アイコン＋1文（立ち上げに協力し、デザインを担当）＋チップ4つ（ブランドロゴ・スノーボード・ボードケース・アパレル）
+  ⑦AI & Making＝Gemini・ChatGPT・Claude のアイコン3つ＋造語の定義＋実践の2段落
+  ⑧Lately＝Fusion・Bambu Studio のアイコン＋3文（3Dプリンタのガジェット・NFC ガジェットもその一つ）
+  ⑨Links＝GPTs「+9(´_ゝ｀)」と note `tas9rew`（公式ロゴ・1行説明）。見出しはすべて英字。フッターは置かない。
+  学校名は本人了承（原本は student_chart の schoolInfo）。ブランド名 Leverage は文中に書かずロゴで示す（商標登録のため表記はロゴのまま＝本人指定）。
 - **代表作の物差し**（2026-09-16 改定）：ページに載せるのは**フリーランス以降で発注元に直接確認して許可を得たタイトル**（FF16・ニンジャガイデン4）だけ。会社員時代のタイトルは、エンドロールにクレジットがあっても**前職が公表していない限り載せない**（前職と発注元の契約に触れる可能性があるため。口頭で話す範囲に留める）。代わりに「案件数35本・主なジャンル・職制の経験」を注記で示す。いずれもロゴ・画像は使わない。
 - ロゴ・ツールのアイコンはすべてインライン SVG（外部読み込みなし）。**Maya / 3ds Max / MotionBuilder は Autodesk 公式サイトの
   製品アイコン（autodesk.com の製品ページに埋め込まれている SVG）を色そのまま**で使用。OpenAI・note・Unreal Engine・Unity は

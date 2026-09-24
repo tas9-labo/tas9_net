@@ -17,7 +17,7 @@ GitHub Pages（公開リポ `tas9-labo/tas9_net`・main ブランチのルート
   ⑥Side Project＝Leverage のロゴ（リンクなし）＋右下に Web・Instagram の無彩色アイコン＋1文（立ち上げに協力し、デザインを担当）＋チップ4つ（ブランドロゴ・スノーボード・ボードケース・アパレル）
   ⑦AI & Making＝Gemini・ChatGPT・Claude のアイコン3つ＋造語の定義＋実践の2段落＋**主な開発言語**（チップ Python／Dart / Flutter＋用途の注記1行。Python＝Maya・MotionBuilder ツール、Dart / Flutter＝Windows・Android アプリ）
   ⑧Lately＝Fusion・Bambu Studio のアイコン＋3文（3Dプリンタのガジェット・NFC ガジェットもその一つ）
-  ⑨Links＝GPTs「+9(´_ゝ｀)」と note `tas9rew`（公式ロゴ・1行説明）。見出しはすべて英字。フッターは置かない。
+  ⑨Links＝GPTs「+9(´_ゝ｀)」・note `tas9rew`・**地図サイト notes.tas9.net**（2026-09-24 追加・アイコンは +9 ロゴ＝検索エンジンが辿るための実リンク）（公式ロゴ・1行説明）。見出しはすべて英字。フッターは置かない。
   学校名は本人了承（原本は student_chart の schoolInfo）。ブランド名 Leverage は文中に書かずロゴで示す（商標登録のため表記はロゴのまま＝本人指定）。
 - **代表作の物差し**（2026-09-16 改定）：ページに載せるのは**フリーランス以降で発注元に直接確認して許可を得たタイトル**（FF16・ニンジャガイデン4）だけ。会社員時代のタイトルは、エンドロールにクレジットがあっても**前職が公表していない限り載せない**（前職と発注元の契約に触れる可能性があるため。口頭で話す範囲に留める）。代わりに「案件数35本・主なジャンル」を Works の注記で示し、職制の経験は About の説明に書く。いずれもロゴ・画像は使わない。
 - ロゴ・ツールのアイコンはすべてインライン SVG（外部読み込みなし）。**Maya / 3ds Max / MotionBuilder は Autodesk 公式サイトの

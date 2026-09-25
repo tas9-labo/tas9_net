@@ -104,6 +104,10 @@ GitHub Pages（公開リポ `tas9-labo/tas9_net`・main ブランチのルート
   証明書が1時間経っても出なかったため Pages のカスタムドメインを外して付け直したら発行された（同じ事が起きたらこの手）→
   HTTPS 強制オン。`https://www.tas9.net/` 200・`http://` は 301 で https へ。
 
+- **Search Console の重複通知（2026-09-21 受信・09-25 対処）**：ドメイン プロパティ `tas9.net` 宛てに「重複しています。ユーザーにより、正規ページとして選択されていません」。
+  apex 実験のなごりで同じ名刺ページが `http://`／`https://`・`tas9.net`／`www` の複数の住所で開け、どれが本物か宣言していなかったため。
+  `index.html` の head に `<link rel="canonical" href="https://www.tas9.net/">` を追加（notes には最初から入れてある）。再クロールで数日〜数週のうちに消えるはず。消えなければ Search Console の「インデックス登録」で該当 URL を確認する。
+
 > **宿題（片付けたら消す）**
 > 0. HTTPS 強制（https_enforced）はオフのまま（配る URL はすべて https なので実害なし。GitHub 側で戻せる状態になっていれば戻す程度）
 > 0-2. **www の証明書の再発行が「new（受付中）」のまま**（2026-09-24。apex を試して戻した時に GitHub が www の証明書情報を作り直し始め、止まっている）。

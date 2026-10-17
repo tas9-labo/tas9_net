@@ -21,7 +21,7 @@ from reportlab.pdfgen import canvas
 from svglib.svglib import svg2rlg
 
 HERE = Path(__file__).resolve().parent
-URL = "https://www.tas9.net/"
+URL = "https://takahashi.tas9.net/"
 INK = HexColor("#1d1d1f")
 SUB = HexColor("#6e6e73")
 CARD_W, CARD_H = 91 * mm, 55 * mm

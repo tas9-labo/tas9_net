@@ -54,7 +54,7 @@ def og_image() -> None:
     d.add(String(x, 372, "高橋 佐", fontName="YuGothB", fontSize=72, fillColor=INK))
     d.add(String(x, 322, "たかはし たすく / Tasuku Takahashi", fontName="YuGothM", fontSize=26, fillColor=SUB))
     d.add(String(x, 250, "モーションデザイナー / AIナレッジデザイナー / 専門学校講師", fontName="YuGothM", fontSize=28, fillColor=INK))
-    d.add(String(x, 205, "www.tas9.net", fontName="YuGothM", fontSize=24, fillColor=SUB))
+    d.add(String(x, 205, "takahashi.tas9.net", fontName="YuGothM", fontSize=24, fillColor=SUB))
     lg = svg2rlg(str(ROOT / "logo.svg"))
     s2 = 120 / lg.height
     lg.scale(s2, s2)

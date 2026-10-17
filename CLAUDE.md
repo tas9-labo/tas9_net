@@ -15,9 +15,10 @@ GitHub Pages（公開リポ `tas9-labo/tas9_net`・main ブランチのルート
   ④Works＝「フリーランスとして開発協力した主なタイトル」＋チップ2本（FF16・ニンジャガイデン4）＋会社員時代の要約注記3行（35本・ジャンル・「その経験を土台に、現在はバトルモーションを専門」で閉じる。職制の歩みは About の説明に任せる）
   ⑤Tools＝アイコンのタイル9つ（Maya・MotionBuilder・3ds Max・Unreal Engine・Unity／Photoshop・Illustrator・Premiere Pro・After Effects）
   ⑥Side Project＝Leverage のロゴ（リンクなし）＋右下に Web・Instagram の無彩色アイコン＋1文（立ち上げに協力し、デザインを担当）＋チップ4つ（ブランドロゴ・スノーボード・ボードケース・アパレル）
-  ⑦AI & Making＝Gemini・ChatGPT・Claude のアイコン3つ＋造語の定義＋実践の2段落＋**主な開発言語**（チップ Python／Dart / Flutter＋用途の注記1行。Python＝Maya・MotionBuilder ツール、Dart / Flutter＝Windows・Android アプリ）
+  ⑦AI & Making＝Gemini・ChatGPT・Claude のアイコン3つ＋造語の定義＋実践の2段落（必要な道具は自分で作ってきた／いまは AI システム「佑」と裏方から note の執筆までを分担。
+  2026-10-17 に「チャットボット『+9(´_ゝ｀)』の公開」を外して佑に差し替え＝公開チャットボットは 2026-10-10 に休止・佑の名前は本人が公開を決めた）＋**主な開発言語**（チップ Python／Dart / Flutter＋用途の注記1行。Python＝Maya・MotionBuilder ツール、Dart / Flutter＝Windows・Android アプリ）
   ⑧Lately＝Fusion・Bambu Studio のアイコン＋3文（3Dプリンタのガジェット・NFC ガジェットもその一つ）
-  ⑨Links＝note `tas9rew`・**地図サイト notes.tas9.net**（2026-09-24 追加・アイコンは +9 ロゴ＝検索エンジンが辿るための実リンク）・**MakerWorld**（2026-10-09 追加・3Dプリントのデータ置き場 `@tas9_3D.Lab`。アイコンは makerworld.com のヘッダーにある公式マークの SVG を形そのまま・黒地に白）（公式ロゴ・1行説明）。見出しはすべて英字。フッターは置かない。
+  ⑨Links＝note `tas9rew`（説明「日々の内省と試行錯誤の記録」＝2026-10-17 に note の自己紹介を「思索のアウトプットの場」に変えたのに合わせた。「発信」と書かない）・**地図サイト notes.tas9.net**（2026-09-24 追加・アイコンは +9 ロゴ＝検索エンジンが辿るための実リンク）・**MakerWorld**（2026-10-09 追加・3Dプリントのデータ置き場 `@tas9_3D.Lab`。アイコンは makerworld.com のヘッダーにある公式マークの SVG を形そのまま・黒地に白）（公式ロゴ・1行説明）。見出しはすべて英字。フッターは置かない。
   GPTs「+9(´_ゝ｀)」のリンクは 2026-10-10 に削除（OpenAI が GPTs を 2026-12-11 で終了→本人がプラグインへ移行し、公開リンクが切れたため）。AI & Making の ChatGPT アイコンは使用ツールの表示なので残す。
   学校名は本人了承（原本は student_chart の schoolInfo）。ブランド名 Leverage は文中に書かずロゴで示す（商標登録のため表記はロゴのまま＝本人指定）。
 - **代表作の物差し**（2026-09-16 改定）：ページに載せるのは**フリーランス以降で発注元に直接確認して許可を得たタイトル**（FF16・ニンジャガイデン4）だけ。会社員時代のタイトルは、エンドロールにクレジットがあっても**前職が公表していない限り載せない**（前職と発注元の契約に触れる可能性があるため。口頭で話す範囲に留める）。代わりに「案件数35本・主なジャンル」を Works の注記で示し、職制の経験は About の説明に書く。いずれもロゴ・画像は使わない。
@@ -57,7 +58,7 @@ GitHub Pages（公開リポ `tas9-labo/tas9_net`・main ブランチのルート
   （押せば端末側が「新規作成／既存に追加」を出す）。
 - 書体は Inter（欧文）＋ Noto Sans JP（和文）。本文 15px・リスト 15px・注記 13px・見出し 12px 英字。
 - アイコン：Tools は 36px のタイル（Autodesk 3製品は公式の色付きバッジ、Unreal / Unity は黒地に白、Adobe 4製品（Ps・Ai・Pr・Ae）は公式アプリアイコンの配色・2026-09-16 追加）。Links は note（note グリーンに白）・notes・MakerWorld のロゴで、説明は 11px・1行（はみ出しは省略記号）。
-- 文章は「1文ごとに改行」を基本にする（About の説明・Lately）。About の年表は `.timeline`（年＝左列・薄字、内容＝右列）で、年と内容を同じ行に置く。造語「AIナレッジデザイナー」は AI & Making の冒頭で定義する。
+- 文章は「1文ごとに改行」を基本にする（About の説明・Lately）。長い文の折り返しが単語の途中で切れないよう、body に `word-break:auto-phrase`（2026-10-17・Chrome／Edge で文節の切れ目で折り返す。Safari は無視して従来どおり）。About の年表は `.timeline`（年＝左列・薄字、内容＝右列）で、年と内容を同じ行に置く。造語「AIナレッジデザイナー」は AI & Making の冒頭で定義する。
 - サイト名（タブ・共有タイトル）は「+9」。氏名は入れない。favicon はキャラ（SVG・ダーク時は明色）。
 - **連絡先は `contact@tas9.net`**（2026-09-23 に連絡用エイリアスを作成し、メールボタン・vCard・tas9.vcf をこれに統一）。個人アドレスは載せない。
 - 確認用に `<html data-theme="dark">` を付けると強制ダークになる（ページに切替UIは置かない）。

@@ -74,6 +74,17 @@ GitHub Pages（公開リポ `tas9-labo/tas9_net`・main ブランチのルート
 3. `git commit` → `git push`（main 直接・ブランチ/PR なし）→ 1〜2分で反映
 - **住所 `https://takahashi.tas9.net/` は変えない**（タグ・QR・名刺に書く住所）。タグはロックすると書き換え不能。中身はいくらでも変えてよい。
 
+## 住所を載せている所（佑の管轄・2026-10-17〜）
+
+名刺ページの住所（や載せる内容）が変わったら、**佑が下の全部を直す**。外部サービスは佑が Chrome で入力まで・**保存は本人**。
+
+- サイト側：`index.html`（canonical・OGP・Android の連絡先）・`tas9.vcf`・`print/`（QR シール・ロック画面用 QR・名刺・OGP）・notes の各ページ（フッターのリンクと JSON-LD・`llms.txt`）
+- note：自己紹介の最後の行（`https://note.com/settings/profile`）
+- X：プロフィールのウェブサイト欄（`https://x.com/settings/profile`）
+- MakerWorld：ソーシャルメディアリンク（`https://makerworld.com/ja/my/settings`）
+- Gmail（takahashi@tas9.net）：署名（歯車 →「すべての設定を表示」→「全般」→「署名」→ 一番下の「変更を保存」）。2026-10-17 は本人が直した
+- 新しく住所を貼った所ができたら、この一覧に足す
+
 ## 配る手段（物理側）
 
 - NFC タグ（NTAG21x）に URL レコードを1件だけ書き、**ロック**する（2026-09-15 ロック済み・iPhone / Android 実機確認済み）（会場で悪戯 URL に書き換えられる事故を防ぐ。タグは使い捨て）。

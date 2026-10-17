@@ -1,8 +1,10 @@
-# CLAUDE.md（tas9_net — www.tas9.net の名刺ページ）
+# CLAUDE.md（tas9_net — takahashi.tas9.net の名刺ページ）
 
-`https://www.tas9.net/` の中身。NFC タグと QR コードの着地点＝**デジタル名刺**。
+`https://takahashi.tas9.net/` の中身。NFC タグと QR コードの着地点＝**デジタル名刺**。
 GitHub Pages（公開リポ `tas9-labo/tas9_net`・main ブランチのルートから配信）。
 旧サイト（Google Sites・©2019）をこれで置き換えた（2026-09-15、TGS ビジネスデー参加をきっかけに新設）。
+**住所は 2026-10-17 に `www.tas9.net` から変えた**（www の証明書の更新が GitHub 側で止まり、無料の範囲で直せないため・本人判断）。
+旧住所 www は転送ページ `web\www_redirect` につないで見張っている。経緯は `DECISIONS.md`。
 
 ## 役割と原本
 
@@ -44,7 +46,8 @@ GitHub Pages（公開リポ `tas9-labo/tas9_net`・main ブランチのルート
 | `leverage.svg` | Side Project の Leverage（スノーボードブランド・本人がロゴを制作、商標登録あり）のロゴ。**原本は `G:\マイドライブ\tas9rew\leverage_work\logo_png\leverage_logo_02.svg`**（Illustrator 出力）。形は原本のまま・色だけ currentColor（ダーク時は白）。ページ内では inline 展開し、公式サイトへのリンクにしている |
 | `logo.svg` | ロゴ「+9」の線だけを切り出した軽量版（`fill=currentColor`・1.4KB）。**原本は Fusion 作業フォルダの `G:\マイドライブ\tas9\00_fusion_work\tas9_logo.svg`**（原本はマスク付き画像を含む15KB）。原本を直したら `path` を取り直す |
 | `tas9.vcf` | 「連絡先に保存」の先（vCard 3.0・CRLF）。**電話番号は入れない**（2026-09-15 決定）。読みは X-PHONETIC-* で iPhone/Android 両対応 |
-| `CNAME` | カスタムドメイン `www.tas9.net`。消えると github.io に戻る |
+| `CNAME` | カスタムドメイン `takahashi.tas9.net`（2026-10-17〜）。消えると github.io に戻る |
+| `DECISIONS.md` | 住所と証明書の経緯（apex の試み・www の申請が止まった件・住所変更） |
 | `.nojekyll` | Jekyll 処理を止める |
 | `print/` | 印刷用（サイトからは参照しない）。ガジェット裏のシール `label_34mm_300dpi.png`（34×34mm・**100%で印刷**）、ロック画面用 `qr_1000.png`、型押し用 `qr.svg`。**名刺**は `make_card.py` が原本（**+9 ロゴ（左・高さ 13mm）→ 名前 13pt＆英名 8pt → QR（右・見える部分 15.5mm）を 1 行に横並び・全体を上下中央**の 91×55mm。ふりがな／URL は載せない。配置は本人のラフ（2026-09-17）を実測して数値化）→ `card_91x55.pdf`（1枚）・`card_a4_10up.pdf`（A4 に10面・**エーワン 51002**（購入済み・マイクロミシン目）の 2列×5行・上 11mm／左 14mm・ガイド線なし）・`card_preview.png`（確認用）。印刷は **100%（実際のサイズ）・拡大縮小なし**で。文言やロゴを変えたら `py print/make_card.py` で作り直す。シール・qr は `make_label.py`、OGP・iOS アイコンは `make_icons.py`。**SNS・共有サイトのアバター** `avatar_1000.png`（+9 ロゴ・丸く切り抜かれても欠けない大きさ・MakerWorld で使用中 2026-10-09〜）は `make_avatar.py` |
 
@@ -69,7 +72,7 @@ GitHub Pages（公開リポ `tas9-labo/tas9_net`・main ブランチのルート
 1. 内容を直す（PROFILE.md の変更 → `index.html` / `tas9.vcf`。肩書・名前・ロゴを変えたら `py print/make_icons.py` で OGP と iOS アイコン、`py print/make_card.py`・`py print/make_label.py` で印刷物も作り直す）
 2. ブラウザで目視確認（スマホ幅 ~400px と PC 幅、ライト/ダーク）
 3. `git commit` → `git push`（main 直接・ブランチ/PR なし）→ 1〜2分で反映
-- **タグ・QR に書いた URL（`https://www.tas9.net/`）は変えない**。タグはロック済みで書き換え不能。中身はいくらでも変えてよい。
+- **住所 `https://takahashi.tas9.net/` は変えない**（タグ・QR・名刺に書く住所）。タグはロックすると書き換え不能。中身はいくらでも変えてよい。
 
 ## 配る手段（物理側）
 
@@ -78,74 +81,26 @@ GitHub Pages（公開リポ `tas9-labo/tas9_net`・main ブランチのルート
 - ガジェット：3Dプリント 35×35×7mm・1個を持ち歩き、相手にかざしてもらう（渡さない）。
   タグの上の樹脂は 2〜3mm 以内・金属/カーボン系フィラメント不可・平置きできる平面。iPhone は上端、Android は背面中央でかざす。
 - 予備：ガジェット裏に QR シール、自分のスマホのロック画面に `qr_1000.png`。紙名刺は作らない。
+- **旧住所 www を書いたタグ・QR シール・ロック画面の QR は破棄してよい**（2026-10-17 本人）。作り直す時は takahashi の住所で（`print/` は作り直し済み）。
 
 ## 公開の足回り
 
-- DNS は GoDaddy。`www` を CNAME `tas9-labo.github.io` へ（`lume.tas9.net` と同じ）。伝播に最大1日。MX は触らない。
-- apex（`tas9.net`＝www 無し）：2026-09-15 に GoDaddy の `@` A レコード 4 本を GitHub Pages の IP
-  （185.199.108.153 / 109 / 110 / 111）へ変更 → **2026-10-17 に4本とも削除**（本人了承）。今は apex に A レコードが無い＝「tas9.net」と手で打っても名刺ページは開かない
-  （タグ・QR・名刺・vCard はすべて www なので実害なし。メールの MX・www の CNAME は触っていない）。
-  **削除した理由**：apex が GitHub を向いていると、GitHub は www の証明書を「www.tas9.net＋tas9.net」の2つ組で申請する
-  （API の `https_certificate.domains` に両方が並ぶ）。apex の証明書は一度も出たことがない（下の記録）ので、2つ組の申請ごと
-  「new」で止まり、www の更新もできなくなっていた。notes は申請が `notes.tas9.net` 1つだけなので付け直しで出た＝差はここ。
-  配信中の www の証明書（〜2026-12-13）は www だけの1枚で、apex を GitHub に向ける前（9/15 朝）に発行されたもの。
-  戻す時は同じ4本を `@` に足すだけ（ただし www の証明書がまた2つ組の申請になる）。
-- **切替の記録（2026-09-15〜16）**：GitHub Pages は**正式ドメイン側にしか証明書を発行しない**。正式を `tas9.net` に切り替える試みを2回
-  （15日 25分・16日 約3時間）行ったが、GitHub の証明書申請は「まもなく開始」から一度も進まず、その間 www→tas9.net 転送の先に証明書が
-  無いため**全訪問者に警告**。原因の切り分け：DNS（CNAME/A/AAAA/CAA/DNSSEC/TXT）は正常、GitHub 稼働正常、CT ログに tas9.net の証明書は
-  一度も無し、GitHub の DNS 健全性チェックが 15 時間「実行中（202）」で滞留→ Pages サイトを削除・再作成でチェックは完了するも申請は始まらず。
-  結論：**www 正式に戻して固定**（www は有効な証明書で正常・`http://tas9.net` は www へ 301）。
-  **なぜ以前は警告が無かったか**：Chrome は「tas9.net」と打つと https を試し、証明書エラーなら自動で http に落として転送に乗る。
-  切替中に `https://tas9.net` を開いた履歴と、www→tas9.net の 301 転送が Chrome にキャッシュされると、切替を戻した後も本人の Chrome だけ
-  警告が出続ける（2026-09-16 実例）。切り分けはシークレットウィンドウで開く→正常なら「閲覧履歴データを削除（履歴＋キャッシュ・全期間）」で直る。
-  GitHub の設定変更のたびにリポジトリへ「Create/Delete/Update CNAME」のコミットが自動で入るので、手元は `git pull --rebase` してから push。
-- **3回目（2026-09-24・約20分）**：notes.tas9.net で効いた「カスタムドメインを外して付け直す」を apex にも試した。
-  DNS（A×4・AAAA 無し・CAA 無し）と ACME の経路（`http://tas9.net/.well-known/acme-challenge/` が GitHub の 404）は正常なのに、
-  証明書の状態は「new」のまま進まず。www→apex 転送の先に証明書が無い危険な状態になるので www に戻した（www は無事）。
-  **結論：この apex には GitHub Pages が証明書を出さない（原因は GitHub 側・3回とも同じ）。4回目はやらない。**
-  直すなら Cloudflare 等を前に置いて apex の TLS を肩代わりさせる道しかなく、DNS の管理先が変わる（Workspace のメール設定に触る）ため見送り。
-- 旧 Google Sites「+9 Tasuku Takahashi」は 2026-09-15 に公開停止→ドライブのゴミ箱へ（30日で完全削除）。
-  他の2サイト（+9の授業／ものづくりを成功に導く文化づくり）は無関係・そのまま。
-- Pages の配信自体は 2026-09-15 に確認済み（GitHub の IP へ直接 HTTP で index=200・tas9.vcf=200 `text/x-vcard`）。
-
-- 2026-09-15 切替完了：GoDaddy で `www` CNAME を `tas9-labo.github.io` に変更（佑が Chrome 経由で実施・本人がサインイン）→
-  証明書が1時間経っても出なかったため Pages のカスタムドメインを外して付け直したら発行された（同じ事が起きたらこの手）→
-  HTTPS 強制オン。`https://www.tas9.net/` 200・`http://` は 301 で https へ。
-
-- **Search Console の重複通知（2026-09-21 受信・09-25 対処）**：ドメイン プロパティ `tas9.net` 宛てに「重複しています。ユーザーにより、正規ページとして選択されていません」。
-  apex 実験のなごりで同じ名刺ページが `http://`／`https://`・`tas9.net`／`www` の複数の住所で開け、どれが本物か宣言していなかったため。
-  `index.html` の head に `<link rel="canonical" href="https://www.tas9.net/">` を追加（notes には最初から入れてある）。再クロールで数日〜数週のうちに消えるはず。消えなければ Search Console の「インデックス登録」で該当 URL を確認する。
+- DNS は GoDaddy（サインインの入口は `web\CLAUDE.md`）。`takahashi` を CNAME `tas9-labo.github.io` へ（2026-10-17 追加・notes・lume と同じ形）。MX は触らない。
+  証明書は `takahashi.tas9.net` 1つ組で発行済み（GitHub が自動更新）・HTTPS 強制オン。`http://` は 301 で https へ。
+- **apex（www 無しの tas9.net）は GitHub に向けない**。向けると GitHub は www の証明書を「www＋apex」の2つ組で申請し、apex が一度も通らないため
+  www ごと止まった（2026-09〜10）。apex は今 A レコード無し（2026-10-17 削除）＝「tas9.net」と手で打っても開かない（実害なし）。
+- **旧住所 www.tas9.net**：証明書の申請が GitHub 側で止まったまま（www＋apex の2つ組・`new`）。申請は住所に結びついて残り、
+  付け直し・サイトの作り直し・別リポジトリでも消えない。無料プランは GitHub サポートに頼めない。
+  www は転送ページ `web\www_redirect` につなぎ、毎週の点検（`docs\整合性チェック.ps1` の [3.9]）が直ったかを見る。直ったら www に戻すかは本人が決める。
+  配信中の www の証明書は 2026-12-13 まで（以降、直らなければ www を開くと警告）。
+- **有料プラン・新しいサービス（Cloudflare 等）は使わない**（2026-10-17 本人。発端は佑の apex 実験なので、お金も手間も増やして後始末しない）。
+- GitHub の設定変更のたびにリポジトリへ「Create/Delete/Update CNAME」のコミットが自動で入るので、手元は `git pull --rebase` してから push。
+- 証明書が出ない時は、カスタムドメインを一度外して付け直す（申請が住所1つの時だけ効く・2026-09-15 www・09-24 notes で発行）。
+- 同じページが複数の住所で開ける時は head の canonical（正規の住所）で宣言する（index.html は `https://takahashi.tas9.net/`）。
+- 経緯（apex 切替の3回の試み・Search Console の重複通知・2026-10-17 の調査と住所変更）は `DECISIONS.md`。
 
 > **宿題（片付けたら消す）**
-> 0. HTTPS 強制（https_enforced）はオフのまま（配る URL はすべて https なので実害なし。GitHub 側で戻せる状態になっていれば戻す程度）
-> 0-2. **www の証明書の更新が止まっている（今の証明書の期限 2026-12-13）**。名刺ページ自体は今は正常に開く（配信中の証明書は www だけの1枚・9/15 発行）。
->    **原因**（2026-10-17 判明）：apex（tas9.net）を GitHub に向けていたため、GitHub が更新を「www.tas9.net＋tas9.net」の2つ組で申請し、
->    apex 側が一度も通らないので申請ごと `new` で止まっていた（9/24〜）。それまで繰り返した「外して付け直す」は原因に効かない手だった。
->    **済み**（2026-10-17）：GoDaddy で apex の A レコード4本を削除（MX・www の CNAME はそのまま）→ GitHub の健全性チェック
->    （`gh api repos/tas9-labo/tas9_net/pages/health` の `alt_domain`）が apex を「GitHub を向いていない」と認識 → カスタムドメインを API で付け直し
->    （`gh api -X PUT repos/tas9-labo/tas9_net/pages` に `{"cname": null}`→`{"cname": "www.tas9.net"}`・ページは止まらない）。
->    それでも申請の中身（`gh api repos/tas9-labo/tas9_net/pages` の `https_certificate`）は古い2つ組・`new` のまま。2時間（19:58〜21:53）見張っても変化なし
->    ＝GitHub は古い申請を自動では作り直さない。**同じ「外して付け直す」をこれ以上繰り返さない。**
->    **残りの作業**：
->    ① ~~まず一度だけ `https_certificate` を確認~~ → **済み**（2026-10-17 22:45・2つ組・`new` のまま＝変化なし）。
->       今後もし `domains` が `["www.tas9.net"]` だけになり `approved` になったら、HTTPS 強制（0 番）をオンに戻して、この項目と 0 番を消す。
->    ② ~~GitHub サポートへ依頼~~ → **効かなかった**（2026-10-17 夜に本人が送信・チケット #4870353「www.tas9.net だけで作り直してほしい」）。
->       即座に閉じられた：**無料プランの窓口は自習用の資料と Community Discussions だけ**という定型の返事。サポートへのチケットは今後も出さない。
->       （窓口の道順：support.github.com/contact →「リポジトリ」→「リポジトリの機能」。Pages の選択肢は無い）
->    ③ GitHub Community Discussions（公開の掲示板）への投稿は**見送り**（答えるのは主に他のユーザーで、止まった申請を消せるのは GitHub の中の人だけ）。
->    ④ ~~Pages のサイトを丸ごと削除→作り直す~~ → **効かなかった**（2026-10-17 22:55・本人了承の上で実施）。
->       申請はサイトではなく**ドメイン（www.tas9.net）に紐づいて残る**＝作り直しても同じ2つ組・`new` のまま。ページと配信中の証明書（〜12/13）は無事。
->       調べると 2026 年は「`new` で止まる」報告が GitHub の掲示板に多数（discussions #200447・#202318・#207696・#209002 など）で、
->       直せるのは GitHub のサポートだけという声が多い。無料プランでは頼めない＝**GitHub 側で直す道はほぼ尽きた**。
->       （参考：同じ日の lume・notes の申請は1つ組で `approved`＝GitHub の発行そのものは動いている）
->    ⑤ **有料プランも、新しいサービスの登録（Cloudflare 等）もしない**（2026-10-17 本人。発端は佑の apex 実験の判断ミスなので、お金も手間も増やして後始末しない）。
->       ロック済みの NFC タグ・QR は**破棄してよい**（本人）＝住所 `www.tas9.net` を守る必要は無い。
->    ⑥ 佑の推し（本人の返事待ち）：**名刺ページの住所を www から、notes と同じ作りの別の名前（例 `card.tas9.net`）に変える**。
->       使うのは今の GitHub と GoDaddy だけ・無料。www 以外の名前は「www 無し」と組にされない＝notes と同じく1つ組で証明書が出て、この罠が二度と起きない。
->       手間：GoDaddy に CNAME を1行足す（サインインは本人）・`CNAME` ファイルと index.html・tas9.vcf・`print/` の住所を直して作り直す・
->       notes の各ページ（リンクと JSON-LD）と note のプロフィールに貼った住所を張り替える（スキル note・print3d の記述も）。古い `www.tas9.net` は開かなくなる。
->    ⑦ 期限：**11月中に片付ける**（12/13 を過ぎると www に警告が出る）。
-> 2. 名刺の原稿は用紙（エーワン 51002）に合わせて作成済み（2026-09-17）。普通紙に1枚試し刷りして用紙と重ねて位置を確かめる → 本番印刷（本人）
+> 1. 名刺の原稿は用紙（エーワン 51002）に合わせて作成済み（2026-09-17・QR は 2026-10-17 に takahashi で作り直し）。普通紙に1枚試し刷りして用紙と重ねて位置を確かめる → 本番印刷（本人）
 
 ## 既知の制限
 
